@@ -9,11 +9,13 @@ import po.service.TrorderService;
 public class TrorderServiceImpl implements TrorderService {
 	private static TrorderDaoImpl tr = new TrorderDaoImpl();
 
+	// create
 	@Override
 	public void addTrorder(Trorder trorder) {
 		tr.add(trorder);
 	}
 
+	// read
 	@Override
 	public List<Trorder> selectAll() {
 		return tr.selectAll();
@@ -24,17 +26,19 @@ public class TrorderServiceImpl implements TrorderService {
 		return tr.selectById(id);
 	}
 
+	// update
 	@Override
 	public void updateTrorder(Trorder trorder) {
 		tr.update(trorder);
 	}
 
+	// delete
 	@Override
 	public void deleteTrorder(int id) {
 		tr.delete(id);
 	}
 
-	// 正確實作 findAllTrorderByMemberId
+	// findAllTrorderByMemberId
 	@Override
 	public List<Trorder> findAllTrorderByMemberId(String memberNo) {
 		return tr.selectByMemberNo(memberNo);

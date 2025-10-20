@@ -17,18 +17,17 @@ public class TrorderDetailDaoImpl implements TrorderDetailDao {
 
 	@Override
 	public void add(TrorderDetail trorderDetail) {
-		String sql = "INSERT INTO trorderdetail(trorderdetailid, trorderdetailno, trorderno, itemno, itemname, quantity, unitprice, amount) VALUES(?,?,?,?,?,?,?,?)";
+		String sql = "insert into trorderdetail(trorderdetailno, trorderno, itemno, itemname, quantity, unitprice, amount) VALUES(?,?,?,?,?,?,?,?)";
 
 		try {
 			PreparedStatement ps = conn.prepareStatement(sql);
-			ps.setInt(1, trorderDetail.getTrorderdetailId());
-			ps.setString(2, trorderDetail.getTrorderdetailNo());
-			ps.setString(3, trorderDetail.getTrorderNo()); // 對應訂單編號
-			ps.setString(4, trorderDetail.getItemNo());
-			ps.setString(5, trorderDetail.getItemName());
-			ps.setInt(6, trorderDetail.getQuantity());
-			ps.setInt(7, trorderDetail.getUnitPrice());
-			ps.setInt(8, trorderDetail.getAmount());
+			ps.setString(1, trorderDetail.getTrorderdetailNo());
+			ps.setString(2, trorderDetail.getTrorderNo()); // 對應訂單編號
+			ps.setString(3, trorderDetail.getItemNo());
+			ps.setString(4, trorderDetail.getItemName());
+			ps.setInt(5, trorderDetail.getQuantity());
+			ps.setInt(6, trorderDetail.getUnitPrice());
+			ps.setInt(7, trorderDetail.getAmount());
 			ps.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -116,9 +115,9 @@ public class TrorderDetailDaoImpl implements TrorderDetailDao {
 		}
 	}
 
-	// 新增：依訂單編號查詢
+	// 依訂單編號查詢
 	public List<TrorderDetail> selectByTrorderNo(String trorderNo) {
-		String sql = "SELECT * FROM trorderdetail WHERE trorderno=?";
+		String sql = "select * from trorderdetail where trorderno=?";
 		List<TrorderDetail> list = new ArrayList<>();
 		try {
 			PreparedStatement ps = conn.prepareStatement(sql);

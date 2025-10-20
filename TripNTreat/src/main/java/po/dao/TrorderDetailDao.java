@@ -12,6 +12,8 @@ public interface TrorderDetailDao {
 	List<TrorderDetail> selectAll();
 
 	TrorderDetail selectById(int id);
+	
+	List<TrorderDetail> selectByTrorderNo(String trorderNo); // 新增
 
 	// update
 	void update(TrorderDetail trorderDetail);

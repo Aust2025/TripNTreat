@@ -2,6 +2,7 @@ package po.service.impl;
 
 import java.util.List;
 
+import po.Trorder;
 import po.TrorderDetail;
 import po.dao.impl.TrorderDetailDaoImpl;
 import po.service.TrorderDetailService;
@@ -37,6 +38,12 @@ public class TrorderDetailServiceImpl implements TrorderDetailService {
 	@Override
 	public void deleteTrorderDetail(int id) {
 		trorderDetailDao.delete(id);
+	}
+	
+	// findAllTrorderByMemberId
+	@Override
+	public List<TrorderDetail> findAllTrorderByTrorderNo(String trorderNo) {
+		return trorderDetailDao.selectByTrorderNo(trorderNo);
 	}
 
 }

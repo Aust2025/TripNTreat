@@ -11,6 +11,8 @@ public class TrorderDetail {
 	private int amount;
 
 	public TrorderDetail() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
 
 	public TrorderDetail(int trorderdetailId, String trorderdetailNo, String trorderNo, String itemNo, String itemName,
