@@ -4,36 +4,57 @@
 #### 適合親子共遊
 
 
-本專案採用 Java 語言 開發，整合 Eclipse IDE 及 Maven 專案管理，遵循 MVC (Model-View-Controller) + DAO (Data Access Object) 的架構原則，並使用 MySQL 作為資料庫。
+##專案簡介
+### 旅遊行程訂購平台，包含會員與後台管理，完整實現商品管理與訂單處理流程。
 
-1. 開發環境與工具
-項目	說明
-程式語言	Java
-整合開發環境 (IDE)	Eclipse
-專案管理工具	Maven
-UI 開發	Eclipse WindowBuilder (Swing)
-資料庫	MySQL
-2. Maven 依賴 (pom.xml)
-專案需包含以下核心依賴：
 
-依賴名稱	用途
-mysql-connector-java	MySQL 資料庫連接
-poi / poi-ooxml	處理 Excel 文件 (訂單明細的報表匯出)
-jfreechart	繪製圖表 (訂單明細的視覺化分析)
-jcommon	jfreechart 依賴
-3. UI 介面設計
-UI 技術: Swing (使用 Eclipse WindowBuilder 輔助設計)
+##會員/員工登入
+### 分頁式 UI
+### 權限分為會員與管理員（員工）
+### 登入後自動導向對應會員及員工入口
 
-Controller/View 核心: JFrame
 
-常用元件:
+##會員
+### 會員註冊與登入
+### 商品瀏覽與搜尋
+### 查看訂單紀錄
+### 修改會員資料
 
-JTable: 用於顯示員工、會員、行程、服務等列表數據。
 
-JComboBox: 用於提供下拉選單選擇 (如區域選擇、行程名稱選擇等)。
+##員工後台管理
+### 商品管理：新增、修改商品分類與商品、調整商品價格
+### 會員管理：檢視與編輯會員資料
+### 訂單管理：查詢所有訂單記錄
 
-4. 專案結構 (Package Structure)
-專案結構嚴格遵循 MVC+DAO 原則，並將 Model 層細分為 PO (Persistent Object) 和 VO (Value Object) 兩個層次。
+
+##會員訂購頁
+### 商品瀏覽與搜尋
+### 加入訂單
+### 確認與下單
+### 找零
+### 登出平台
+
+
+##使用技術
+### Java（JDK 11）
+### JDBC
+### MVC 架構
+### JFrame GUI
+### MySQL 資料庫
+
+專案架構
+
+
+
+操作說明
+### 安裝 JDK 11 並設定環境變數
+### 使用 MySQL 建立資料庫，執行 sql/setup.sql
+### 執行jar檔案
+### 設定好資料庫連線Dbconnection
+### 登入後可使用會員或員工後台管理功能
+
+
+
 
 ProjectRoot/
 ├── src/main/java/              // 核心 Java 程式碼
@@ -102,95 +123,7 @@ ProjectRoot/
 │
 └── src/main/resources/         // 資源檔 (如 log4j 配置、i18n 檔)
 
-架構說明：
 
-PO (Persistent Object): 專注於資料持久化，通常與資料庫表結構一對一對應，用於 DAO 層的存取。
-
-VO (Value Object): 專注於業務數據的傳輸和展示，可能聚合多個 PO 的數據，或只包含 PO 的部分欄位 (如用於 View 層的資料顯示)。
-
-DAO (Data Access Object): 負責資料庫的 CRUD (Create, Read, Update, Delete) 操作。
-
-Service: 負責 業務邏輯 的處理，協調多個 DAO 操作，並處理交易 (Transaction)。
-
-Controller: 處理 UI 介面的事件，調用 Service 層的方法，並更新 View 層。
-
-5. 模組列表與核心功能
-模組名稱	核心功能
-員工模組	CRUD (新增/查詢/修改/刪除) 員工資料、登入驗證。
-會員模組	CRUD 會員資料、積分管理、等級劃分。
-行程模組	包含：目的地、區域、行程名稱、行程庫存、單價。CRUD 行程資料，庫存管理。
-服務模組	包含：訂計程車、行李、飯店餐廳項目、單價、數量。CRUD 服務項目，服務單價設定。
-訂單主表模組	多對多 關係管理 (與行程/服務的關係)。生成訂單、狀態追蹤。
-訂單明細表模組	記錄訂單中包含的行程和服務明細。
-
-5.1 訂單明細的報表與圖表功能
-
-功能	模組/技術	說明
-報表匯出	POI	使用 Apache POI 實現，將訂單明細、銷售統計等數據導出為 Excel (.xlsx) 文件，供財務或管理層分析。
-數據視覺化	JFreeChart	在 UI 介面中嵌入圖表
-	
-  
-📁 各層職責說明
-1️⃣ controller — 控制層 (MVC 的 C)
-負責接收使用者請求，呼叫 service 處理業務邏輯，最後返回結果（頁面或 JSON）。
-依模組分為：
-employee：員工相關操作（登入、報表、更新員工資料等）。
-member：會員相關操作（註冊、登入、修改資料）。
-trorder：旅遊訂單相關操作（新增、查詢、刪除、輸出）。
-代表檔案：
-EmployeeLogin.java, OrderReport.java, AddMember.java, AddTrorder.java 等。
-
-
-2️⃣ service — 業務邏輯層
-處理具體業務邏輯，調用 DAO 操作資料庫。
-對應多個實體：Employee, Member, Trip, Trorder 等。
-代表檔案：
-Employee.java, Member.java, Trip.java, Trorder.java
-
-3️⃣ dao — 資料訪問層
-定義資料庫操作介面 (Dao)，以及具體實作 (DaoImpl)。
-負責與資料庫互動，如新增、刪除、查詢、更新等。
-
-dao
-├── EmployeeDao.java
-├── MemberDao.java
-├── ServiceDao.java
-├── TripDao.java
-├── TrorderDao.java
-├── TrorderDetailDao.java
-└── impl
-    ├── EmployeeDaoImpl.java
-    ├── MemberDaoImpl.java
-    ├── ServiceDaoImpl.java
-    ├── TripDaoImpl.java
-    ├── TrorderDaoImpl.java
-    └── TrorderDetailDaoImpl.java
-    
-4️⃣ po — 實體 (Persistence Object)
-與資料庫表對應的 Java 類別，用於封裝資料。
-範例：
-Employee.java
-Member.java
-Trip.java
-Trorder.java
-TrorderDetail.java
-
-5️⃣ util — 工具類
-封裝共用功能，如資料庫連線、Excel 匯出、輸入驗證、格式轉換等。
-代表檔案：
-DbConnection.java：資料庫連線。
-CreateExcel.java：建立 Excel 報表。
-ToolChange.java, ChartUtil.java：各類通用工具。
-
-6️⃣ exception
-自訂例外類別，例如 DataAccessException.java，用於統一處理 DAO 層錯誤。
-7️⃣ config
-一般放設定檔（例如 Spring 設定、JDBC、Session、環境變數等）。
-
-
-[java檔](TripNTreat/src/main/java)
-
-[jar檔](Tripntreat.jar)
 
 | 第一階段                |   第二階段       | 第三階段           | 第四階段          | 第五階段        | 
 | ----------------------- | ---------------| ------------------ |------------------|----------------|
