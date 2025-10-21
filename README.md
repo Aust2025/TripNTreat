@@ -60,4 +60,13 @@
 | 平台構思                |  分析資料庫表單  | 介面對應資料庫      | 測試資料寫入資料庫 | 確認平台功能    |
 
 
+<img width="762" height="451" alt="image" src="https://github.com/user-attachments/assets/c56caa44-6f47-4f32-bb78-2ea199d142c5" />
+
+<img width="784" height="450" alt="image" src="https://github.com/user-attachments/assets/c06c3f74-978a-4c41-8e74-d2424ba837d4" />
+
+<img width="723" height="466" alt="image" src="https://github.com/user-attachments/assets/0ad4890d-b1f5-4bad-bffa-f02c77debfb4" />
+
+
+
+
 
