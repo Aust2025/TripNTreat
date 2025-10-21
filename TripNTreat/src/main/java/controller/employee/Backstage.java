@@ -143,7 +143,7 @@ public class Backstage extends JFrame {
 			}
 		});
 		btnLogout.setForeground(new Color(0, 0, 0));
-		btnLogout.setBackground(new Color(15, 84, 145));
+		btnLogout.setBackground(new Color(175, 238, 238));
 		btnLogout.setBounds(554, 2, 121, 35);
 		panelHeader.add(btnLogout);
 

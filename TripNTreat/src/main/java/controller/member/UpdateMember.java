@@ -221,7 +221,7 @@ public class UpdateMember extends JFrame {
 
 		JButton confirmUpdateButton = new JButton("確認修改");
 		confirmUpdateButton.setFont(new Font("Serif", Font.PLAIN, 13));
-		confirmUpdateButton.setBounds(370, 226, 85, 35);
+		confirmUpdateButton.setBounds(370, 226, 104, 35);
 		confirmUpdateButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -267,7 +267,7 @@ public class UpdateMember extends JFrame {
 
 		JButton confirmDeleteButton = new JButton("確認刪除");
 		confirmDeleteButton.setFont(new Font("Serif", Font.PLAIN, 13));
-		confirmDeleteButton.setBounds(370, 374, 85, 41);
+		confirmDeleteButton.setBounds(370, 374, 104, 41);
 		confirmDeleteButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {

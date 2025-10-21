@@ -229,7 +229,7 @@ public class UpdateEmployee extends JFrame {
 			}
 		});
 		btnBack.setForeground(new Color(0, 0, 0));
-		btnBack.setBackground(new Color(15, 84, 145));
+		btnBack.setBackground(new Color(175, 238, 238));
 		btnBack.setBounds(296, 173, 115, 25);
 		panelForm.add(btnBack);
 

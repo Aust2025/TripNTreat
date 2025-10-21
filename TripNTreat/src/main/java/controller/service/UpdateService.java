@@ -303,7 +303,7 @@ public class UpdateService extends JFrame {
 			}
 		});
 		btnAddService.setForeground(new Color(0, 0, 0));
-		btnAddService.setBackground(new Color(15, 84, 145));
+		btnAddService.setBackground(new Color(175, 238, 238));
 		btnAddService.setBounds(322, 240, 115, 52);
 		panel_1.add(btnAddService);
 	}
