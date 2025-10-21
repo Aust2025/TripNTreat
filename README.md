@@ -43,7 +43,90 @@
 #### MySQL 資料庫
 
 ## 專案架構
-
+ProjectRoot/
+├── src/main/java/              
+│
+│   ├── config/                    
+│   │   
+│   │
+│   ├── controller/                 
+│   │   ├── employee
+│   │   │    ├──AddEmployee.java
+│   │   │    ├──Backstage.java
+│   │   │    ├──ConfirmOrder.java
+│   │   │    ├──EmployeeLogin.java
+│   │   │    ├──OrderReport.java
+│   │   │    ├──UpdateEmployee.java
+│   │   ├── member
+│   │   │    ├──AddMember.java
+│   │   │    ├──AddMemberError.java
+│   │   │    ├──AddMemberSuccess.java
+│   │   │    ├──Login.java
+│   │   │    ├──LoginError.java
+│   │   │    ├──LoginSuccess.java  
+│   │   │    ├──UpdateMember.java  
+│   │   ├── service
+│   │   │    ├──AddService.java
+│   │   │    ├──AddTrip.java
+│   │   │    ├──UpdateService.java
+│   │   ├── trorder
+│   │   │    ├──AddTrorder.java
+│   │   │    ├──CheckTrorder.java
+│   │   │    ├──DeleteTrorder.java
+│   │   │    ├──OutputTrorder.java
+│   │   ├── WelcomePage.java   
+│   │
+│   ├── exception/                  
+│   │   ├── DataAccessException.java    
+│   │   
+│   │
+│   ├── po/                        
+│   │   ├── Employee.java             
+│   │   ├── Member.java               
+│   │   ├── Service.java          
+│   │   ├── Trip.java              
+│   │   ├── Trorder.java          
+│   │   └── TrorderDetail.java          
+│   │
+│   │   ├── po.dao/                 
+│   │   │   ├── EmployeeDao.java
+│   │   │   ├── MemberDao.java
+│   │   │   ├── ServiceDao.java  
+│   │   │   ├── TripDao.java
+│   │   │   ├── TrorderDao.java
+│   │   │   ├── TrorderDetailDao.java  
+│   │   │   └── impl/               
+│   │   │       ├── EmployeeDaoImpl.java
+│   │   │       ├── MemberDaoImpl.java
+│   │   │       ├── ServiceDaoImpl.java  
+│   │   │       ├── TripDaoImpl.java
+│   │   │       ├── TrorderDaoImpl.java
+│   │   │       └── TrorderDetailDaoImpl.java
+│   │   └── po.service/             
+│   │       ├── EmployeeService.java
+│   │       ├── MemberService.java
+│   │       ├── ServiceService.java  
+│   │       ├── TripService.java
+│   │       ├── TrorderService.java
+│   │       ├── TrorderDetailService.java  
+│   │       └── impl/              
+│   │           ├── EmployeeServiceImpl.java
+│   │           ├── MemberServiceImpl.java
+│   │           ├── ServiceServiceImpl.java  
+│   │           ├── TripServiceImpl.java
+│   │           ├── TrorderServiceImpl.java
+│   │           └── TrorderDetailServiceImpl.java
+│   │
+│   │
+│   └── util/
+│       ├── ChartUtil.java
+│       ├── CreateExcel.java  
+│       ├── DbConnection.java           
+│       ├── InputUtil.java                     
+│       ├── Tool.java           
+│       └── ToolChange.java                   
+│
+└── src/main/resources/         
 
 
 ## 操作說明
