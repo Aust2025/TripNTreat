@@ -65,6 +65,4 @@
 | 平台構思                |  分析資料庫表單  | 介面對應資料庫      | 測試資料寫入資料庫 | 確認平台功能    |
 
 
-- 編號 
-- 分點
-<img width="680" height="362" alt="WelcomePage" src="https://github.com/user-attachments/assets/483f7012-d5ee-4abb-92ca-070963331d95" />
+
