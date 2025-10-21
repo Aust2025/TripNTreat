@@ -7,6 +7,8 @@
 ## 專案簡介
 #### 旅遊行程訂購平台，包含會員與後台管理，完整實現商品管理與訂單處理流程。
 
+<img width="784" height="450" alt="image" src="https://github.com/user-attachments/assets/c06c3f74-978a-4c41-8e74-d2424ba837d4" />
+
 
 ## 會員/員工登入
 - 分頁式 UI
@@ -65,7 +67,6 @@
 
 
 
-<img width="784" height="450" alt="image" src="https://github.com/user-attachments/assets/c06c3f74-978a-4c41-8e74-d2424ba837d4" />
 
 
 
