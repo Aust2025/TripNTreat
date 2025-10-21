@@ -36,11 +36,11 @@
 
 
 ## 使用技術
-#### Java（JDK 11）
-#### JDBC
-#### MVC 架構
-#### JFrame GUI
-#### MySQL 資料庫
+- Java（JDK 11）
+- JDBC
+- MVC 架構
+- JFrame GUI
+- MySQL 資料庫
 
 ## 專案架構
 <img width="351" height="929" alt="image" src="https://github.com/user-attachments/assets/5f2695fb-3b19-491a-a9a6-0b29fd772141" />
