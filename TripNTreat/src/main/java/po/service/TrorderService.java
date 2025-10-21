@@ -12,9 +12,11 @@ public interface TrorderService {
 	// read
 	List<Trorder> selectAll();
 
-	List<Trorder> findAllTrorderByMemberId(String memberNo); // 依會員查詢
+	List<Trorder> findAllTrorderByMemberId(String memberNo); 
 
 	Trorder findTrorderById(int id);
+
+	Trorder findTrorderByNo(String trorderNo);
 
 	// update
 	void updateTrorder(Trorder trorder);

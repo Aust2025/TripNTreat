@@ -6,7 +6,7 @@ public interface MemberDao {
 	// create
 	void insert(String name, String username, String password, String email, String phone, String address);
 
-	void insert(Member member);// inject物件注入
+	void insert(Member member);
 
 	// read
 	String selectAll();// select * from member

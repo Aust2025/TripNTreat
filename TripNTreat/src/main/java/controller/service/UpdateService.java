@@ -63,7 +63,7 @@ public class UpdateService extends JFrame {
 		JLabel lblNewLabel = new JLabel("服務項目管理");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setForeground(new Color(0, 0, 0));
-		lblNewLabel.setFont(new Font("微軟正黑體", Font.BOLD, 14));
+		lblNewLabel.setFont(new Font("Serif", Font.BOLD, 14));
 		lblNewLabel.setBounds(6, 0, 448, 35);
 		panel.add(lblNewLabel);
 
@@ -82,7 +82,7 @@ public class UpdateService extends JFrame {
 		JLabel lblNewLabel_1_1_3 = new JLabel("所有服務項目資料");
 		lblNewLabel_1_1_3.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_1_1_3.setForeground(new Color(0, 0, 0));
-		lblNewLabel_1_1_3.setFont(new Font("微軟正黑體", Font.BOLD, 14));
+		lblNewLabel_1_1_3.setFont(new Font("Serif", Font.BOLD, 14));
 		lblNewLabel_1_1_3.setBounds(150, 0, 134, 25);
 		panel_2_1_1.add(lblNewLabel_1_1_3);
 
@@ -123,53 +123,54 @@ public class UpdateService extends JFrame {
 		JLabel lblNewLabel_1_1_2 = new JLabel("修改服務項目");
 		lblNewLabel_1_1_2.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_1_1_2.setForeground(new Color(0, 0, 0));
-		lblNewLabel_1_1_2.setFont(new Font("微軟正黑體", Font.BOLD, 14));
+		lblNewLabel_1_1_2.setFont(new Font("Serif", Font.BOLD, 14));
 		lblNewLabel_1_1_2.setBounds(100, 0, 234, 25);
 		panel_2.add(lblNewLabel_1_1_2);
 
 		JLabel lblId = new JLabel("編號");
 		lblId.setForeground(new Color(0, 0, 0));
-		lblId.setFont(new Font("微軟正黑體", Font.BOLD, 14));
-		lblId.setBounds(111, 212, 60, 25);
+		lblId.setFont(new Font("Serif", Font.BOLD, 14));
+		lblId.setBounds(70, 217, 60, 25);
 		panel_1.add(lblId);
 
 		idLabel = new JLabel("");
 		idLabel.setForeground(new Color(0, 0, 0));
-		idLabel.setFont(new Font("微軟正黑體", Font.BOLD, 14));
+		idLabel.setFont(new Font("Serif", Font.BOLD, 14));
 		idLabel.setBounds(83, 210, 160, 25);
 		panel_1.add(idLabel);
 
 		JLabel lblServiceNo = new JLabel("服務編號");
 		lblServiceNo.setForeground(new Color(0, 0, 0));
-		lblServiceNo.setFont(new Font("微軟正黑體", Font.BOLD, 14));
-		lblServiceNo.setBounds(111, 247, 60, 25);
+		lblServiceNo.setFont(new Font("Serif", Font.BOLD, 14));
+		lblServiceNo.setBounds(70, 252, 60, 25);
 		panel_1.add(lblServiceNo);
 
 		serviceNoField = new JTextField();
-		serviceNoField.setBounds(181, 247, 160, 25);
+		serviceNoField.setBounds(140, 252, 160, 25);
 		panel_1.add(serviceNoField);
 
 		JLabel lblName = new JLabel("名稱");
 		lblName.setForeground(new Color(0, 0, 0));
-		lblName.setFont(new Font("微軟正黑體", Font.BOLD, 14));
-		lblName.setBounds(111, 282, 60, 25);
+		lblName.setFont(new Font("Serif", Font.BOLD, 14));
+		lblName.setBounds(70, 287, 60, 25);
 		panel_1.add(lblName);
 
 		nameField = new JTextField();
-		nameField.setBounds(181, 282, 160, 25);
+		nameField.setBounds(140, 287, 160, 25);
 		panel_1.add(nameField);
 
 		JLabel lblPrice = new JLabel("價格");
 		lblPrice.setForeground(new Color(0, 0, 0));
-		lblPrice.setFont(new Font("微軟正黑體", Font.BOLD, 14));
-		lblPrice.setBounds(111, 317, 60, 25);
+		lblPrice.setFont(new Font("Serif", Font.BOLD, 14));
+		lblPrice.setBounds(70, 322, 60, 25);
 		panel_1.add(lblPrice);
 
 		priceField = new JTextField();
-		priceField.setBounds(181, 317, 160, 25);
+		priceField.setBounds(140, 322, 160, 25);
 		panel_1.add(priceField);
 
 		JButton btnUpdate = new JButton("修改資料");
+		btnUpdate.setFont(new Font("Serif", Font.PLAIN, 13));
 		btnUpdate.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -228,11 +229,12 @@ public class UpdateService extends JFrame {
 			}
 		});
 		btnUpdate.setForeground(new Color(0, 0, 0));
-		btnUpdate.setBackground(new Color(15, 84, 145));
-		btnUpdate.setBounds(44, 359, 115, 42);
+		btnUpdate.setBackground(new Color(175, 238, 238));
+		btnUpdate.setBounds(322, 310, 115, 52);
 		panel_1.add(btnUpdate);
 
 		JButton btnNewButton_1 = new JButton("回上一頁");
+		btnNewButton_1.setFont(new Font("Serif", Font.PLAIN, 13));
 		btnNewButton_1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -242,8 +244,8 @@ public class UpdateService extends JFrame {
 			}
 		});
 		btnNewButton_1.setForeground(new Color(0, 0, 0));
-		btnNewButton_1.setBackground(new Color(15, 84, 145));
-		btnNewButton_1.setBounds(332, 354, 115, 52);
+		btnNewButton_1.setBackground(new Color(175, 238, 238));
+		btnNewButton_1.setBounds(162, 372, 115, 52);
 		panel_1.add(btnNewButton_1);
 
 		JButton btnDelete = new JButton("刪除選中資料");
@@ -291,6 +293,7 @@ public class UpdateService extends JFrame {
 		panel_1.add(btnDelete);
 
 		JButton btnAddService = new JButton("新增服務");
+		btnAddService.setFont(new Font("Serif", Font.PLAIN, 13));
 		btnAddService.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -301,7 +304,7 @@ public class UpdateService extends JFrame {
 		});
 		btnAddService.setForeground(new Color(0, 0, 0));
 		btnAddService.setBackground(new Color(15, 84, 145));
-		btnAddService.setBounds(181, 359, 115, 42);
+		btnAddService.setBounds(322, 240, 115, 52);
 		panel_1.add(btnAddService);
 	}
 }

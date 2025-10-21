@@ -78,7 +78,7 @@ public class AddTrip extends JFrame {
 		JLabel lblNewLabel = new JLabel("行程管理");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setForeground(new Color(0, 0, 0));
-		lblNewLabel.setFont(new Font("微軟正黑體", Font.BOLD, 14));
+		lblNewLabel.setFont(new Font("Serif", Font.BOLD, 14));
 		lblNewLabel.setBounds(241, 0, 78, 35);
 		panel.add(lblNewLabel);
 
@@ -97,7 +97,7 @@ public class AddTrip extends JFrame {
 		JLabel lblNewLabel_1_1_3 = new JLabel("所有行程資料");
 		lblNewLabel_1_1_3.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_1_1_3.setForeground(new Color(0, 0, 0));
-		lblNewLabel_1_1_3.setFont(new Font("微軟正黑體", Font.BOLD, 14));
+		lblNewLabel_1_1_3.setFont(new Font("Serif", Font.BOLD, 14));
 		lblNewLabel_1_1_3.setBounds(200, 0, 134, 25);
 		panel_2_1_1.add(lblNewLabel_1_1_3);
 
@@ -143,13 +143,13 @@ public class AddTrip extends JFrame {
 		JLabel lblNewLabel_1_1_2 = new JLabel("選取要修改的資料");
 		lblNewLabel_1_1_2.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_1_1_2.setForeground(new Color(0, 0, 0));
-		lblNewLabel_1_1_2.setFont(new Font("微軟正黑體", Font.BOLD, 14));
+		lblNewLabel_1_1_2.setFont(new Font("Serif", Font.BOLD, 14));
 		lblNewLabel_1_1_2.setBounds(150, 0, 234, 25);
 		panel_2.add(lblNewLabel_1_1_2);
 
 		JLabel lblId = new JLabel("編號");
 		lblId.setForeground(new Color(0, 0, 0));
-		lblId.setFont(new Font("微軟正黑體", Font.BOLD, 14));
+		lblId.setFont(new Font("Serif", Font.BOLD, 14));
 		lblId.setBounds(13, 210, 60, 25);
 		panel_1.add(lblId);
 
@@ -161,7 +161,7 @@ public class AddTrip extends JFrame {
 
 		JLabel lblTripNo = new JLabel("行程編號");
 		lblTripNo.setForeground(new Color(0, 0, 0));
-		lblTripNo.setFont(new Font("微軟正黑體", Font.BOLD, 14));
+		lblTripNo.setFont(new Font("Serif", Font.BOLD, 14));
 		lblTripNo.setBounds(13, 245, 60, 25);
 		panel_1.add(lblTripNo);
 
@@ -171,7 +171,7 @@ public class AddTrip extends JFrame {
 
 		JLabel lblRegion = new JLabel("區域");
 		lblRegion.setForeground(new Color(0, 0, 0));
-		lblRegion.setFont(new Font("微軟正黑體", Font.BOLD, 14));
+		lblRegion.setFont(new Font("Serif", Font.BOLD, 14));
 		lblRegion.setBounds(13, 280, 60, 25);
 		panel_1.add(lblRegion);
 
@@ -181,7 +181,7 @@ public class AddTrip extends JFrame {
 
 		JLabel lblDestination = new JLabel("目的地");
 		lblDestination.setForeground(new Color(0, 0, 0));
-		lblDestination.setFont(new Font("微軟正黑體", Font.BOLD, 14));
+		lblDestination.setFont(new Font("Serif", Font.BOLD, 14));
 		lblDestination.setBounds(13, 315, 60, 25);
 		panel_1.add(lblDestination);
 
@@ -191,7 +191,7 @@ public class AddTrip extends JFrame {
 
 		JLabel lblTripName = new JLabel("名稱");
 		lblTripName.setForeground(new Color(0, 0, 0));
-		lblTripName.setFont(new Font("微軟正黑體", Font.BOLD, 14));
+		lblTripName.setFont(new Font("Serif", Font.BOLD, 14));
 		lblTripName.setBounds(290, 210, 60, 25);
 		panel_1.add(lblTripName);
 
@@ -201,7 +201,7 @@ public class AddTrip extends JFrame {
 
 		JLabel lblDepartureDate = new JLabel("出發日期");
 		lblDepartureDate.setForeground(new Color(0, 0, 0));
-		lblDepartureDate.setFont(new Font("微軟正黑體", Font.BOLD, 14));
+		lblDepartureDate.setFont(new Font("Serif", Font.BOLD, 14));
 		lblDepartureDate.setBounds(290, 245, 60, 25);
 		panel_1.add(lblDepartureDate);
 
@@ -211,7 +211,7 @@ public class AddTrip extends JFrame {
 
 		JLabel lblPrice = new JLabel("價格");
 		lblPrice.setForeground(new Color(0, 0, 0));
-		lblPrice.setFont(new Font("微軟正黑體", Font.BOLD, 14));
+		lblPrice.setFont(new Font("Serif", Font.BOLD, 14));
 		lblPrice.setBounds(290, 280, 60, 25);
 		panel_1.add(lblPrice);
 
@@ -221,7 +221,7 @@ public class AddTrip extends JFrame {
 
 		JLabel lblStock = new JLabel("庫存");
 		lblStock.setForeground(new Color(0, 0, 0));
-		lblStock.setFont(new Font("微軟正黑體", Font.BOLD, 14));
+		lblStock.setFont(new Font("Serif", Font.BOLD, 14));
 		lblStock.setBounds(290, 315, 60, 25);
 		panel_1.add(lblStock);
 
@@ -238,13 +238,13 @@ public class AddTrip extends JFrame {
 		JLabel lblNewLabel_1_1_2_1 = new JLabel("新增行程的資料");
 		lblNewLabel_1_1_2_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_1_1_2_1.setForeground(new Color(0, 0, 0));
-		lblNewLabel_1_1_2_1.setFont(new Font("微軟正黑體", Font.BOLD, 14));
+		lblNewLabel_1_1_2_1.setFont(new Font("Serif", Font.BOLD, 14));
 		lblNewLabel_1_1_2_1.setBounds(170, 0, 194, 25);
 		panel_2_1.add(lblNewLabel_1_1_2_1);
 
 		JLabel lblCreateTripNo = new JLabel("行程編號");
 		lblCreateTripNo.setForeground(new Color(0, 0, 0));
-		lblCreateTripNo.setFont(new Font("微軟正黑體", Font.BOLD, 14));
+		lblCreateTripNo.setFont(new Font("Serif", Font.BOLD, 14));
 		lblCreateTripNo.setBounds(13, 385, 60, 25);
 		panel_1.add(lblCreateTripNo);
 
@@ -254,7 +254,7 @@ public class AddTrip extends JFrame {
 
 		JLabel lblCreateRegion = new JLabel("區域");
 		lblCreateRegion.setForeground(new Color(0, 0, 0));
-		lblCreateRegion.setFont(new Font("微軟正黑體", Font.BOLD, 14));
+		lblCreateRegion.setFont(new Font("Serif", Font.BOLD, 14));
 		lblCreateRegion.setBounds(13, 420, 60, 25);
 		panel_1.add(lblCreateRegion);
 
@@ -264,7 +264,7 @@ public class AddTrip extends JFrame {
 
 		JLabel lblCreateDestination = new JLabel("目的地");
 		lblCreateDestination.setForeground(new Color(0, 0, 0));
-		lblCreateDestination.setFont(new Font("微軟正黑體", Font.BOLD, 14));
+		lblCreateDestination.setFont(new Font("Serif", Font.BOLD, 14));
 		lblCreateDestination.setBounds(13, 455, 60, 25);
 		panel_1.add(lblCreateDestination);
 
@@ -274,7 +274,7 @@ public class AddTrip extends JFrame {
 
 		JLabel lblCreateTripName = new JLabel("名稱");
 		lblCreateTripName.setForeground(new Color(0, 0, 0));
-		lblCreateTripName.setFont(new Font("微軟正黑體", Font.BOLD, 14));
+		lblCreateTripName.setFont(new Font("Serif", Font.BOLD, 14));
 		lblCreateTripName.setBounds(290, 385, 60, 25);
 		panel_1.add(lblCreateTripName);
 
@@ -284,7 +284,7 @@ public class AddTrip extends JFrame {
 
 		JLabel lblCreateDepartureDate = new JLabel("出發日期");
 		lblCreateDepartureDate.setForeground(new Color(0, 0, 0));
-		lblCreateDepartureDate.setFont(new Font("微軟正黑體", Font.BOLD, 14));
+		lblCreateDepartureDate.setFont(new Font("Serif", Font.BOLD, 14));
 		lblCreateDepartureDate.setBounds(290, 420, 60, 25);
 		panel_1.add(lblCreateDepartureDate);
 
@@ -294,7 +294,7 @@ public class AddTrip extends JFrame {
 
 		JLabel lblCreatePrice = new JLabel("價格");
 		lblCreatePrice.setForeground(new Color(0, 0, 0));
-		lblCreatePrice.setFont(new Font("微軟正黑體", Font.BOLD, 14));
+		lblCreatePrice.setFont(new Font("Serif", Font.BOLD, 14));
 		lblCreatePrice.setBounds(290, 455, 60, 25);
 		panel_1.add(lblCreatePrice);
 
@@ -304,7 +304,7 @@ public class AddTrip extends JFrame {
 
 		JLabel lblCreateStock = new JLabel("庫存");
 		lblCreateStock.setForeground(new Color(0, 0, 0));
-		lblCreateStock.setFont(new Font("微軟正黑體", Font.BOLD, 14));
+		lblCreateStock.setFont(new Font("Serif", Font.BOLD, 14));
 		lblCreateStock.setBounds(290, 490, 60, 25);
 		panel_1.add(lblCreateStock);
 
@@ -313,6 +313,7 @@ public class AddTrip extends JFrame {
 		panel_1.add(createStockField);
 
 		JButton btnNewButton_3 = new JButton("登出");
+		btnNewButton_3.setFont(new Font("Serif", Font.PLAIN, 13));
 		btnNewButton_3.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -322,7 +323,7 @@ public class AddTrip extends JFrame {
 			}
 		});
 		btnNewButton_3.setForeground(new Color(0, 0, 0));
-		btnNewButton_3.setBackground(new Color(15, 84, 145));
+		btnNewButton_3.setBackground(new Color(175, 238, 238));
 		btnNewButton_3.setBounds(480, 5, 70, 25);
 		panel.add(btnNewButton_3);
 
@@ -414,6 +415,7 @@ public class AddTrip extends JFrame {
 		panel_1.add(btnUpdate);
 
 		JButton btnNewButton_1 = new JButton("回上一頁");
+		btnNewButton_1.setFont(new Font("Serif", Font.PLAIN, 13));
 		btnNewButton_1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {

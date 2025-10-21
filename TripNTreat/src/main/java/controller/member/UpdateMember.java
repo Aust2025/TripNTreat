@@ -18,6 +18,7 @@ import javax.swing.border.EmptyBorder;
 
 import po.Member;
 import po.service.impl.MemberServiceImpl;
+import util.Tool;
 
 public class UpdateMember extends JFrame {
 
@@ -54,14 +55,11 @@ public class UpdateMember extends JFrame {
 	 */
 	public UpdateMember() {
 		msi = new MemberServiceImpl();
-		// Placeholder: Current member should be passed or retrieved
-		// For now, assume a logged-in member is passed or retrieved via another
-		// mechanism
+		// Member loggedInMember = Tool.loadMember();
+		Member member = Tool.loadMember();
+		// Tool.saveMember(member);
 		// currentMember = (Member) Tool.readFile("member.txt");
-		// Instead, we need a way to get the logged-in member; here we assume it's set
-		// externally
-		currentMember = new Member(); // Replace with actual member retrieval logic
-
+		currentMember = new Member();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 590, 550); // Adjusted height to accommodate email field
 		contentPane = new JPanel();
@@ -78,7 +76,7 @@ public class UpdateMember extends JFrame {
 		JLabel titleLabel = new JLabel("會員資料更新");
 		titleLabel.setForeground(new Color(0, 0, 0));
 		titleLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		titleLabel.setFont(new Font("微軟正黑體", Font.BOLD, 14));
+		titleLabel.setFont(new Font("Serif", Font.BOLD, 16));
 		titleLabel.setBounds(157, -2, 226, 35);
 		headerPanel.add(titleLabel);
 
@@ -92,16 +90,15 @@ public class UpdateMember extends JFrame {
 		memberNameLabel.setBounds(38, 6, 213, 25);
 		memberNameLabel.setForeground(new Color(0, 0, 0));
 		memberNameLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		memberNameLabel.setFont(new Font("微軟正黑體", Font.BOLD, 14));
+		memberNameLabel.setFont(new Font("serif", Font.BOLD, 14));
 		mainPanel.add(memberNameLabel);
 
 		memberDataTextArea = new JTextArea();
 		memberDataTextArea.setBounds(48, 43, 203, 179);
-		memberDataTextArea.setFont(new Font("微軟正黑體", Font.BOLD, 14));
+		memberDataTextArea.setFont(new Font("serif", Font.BOLD, 14));
 		memberDataTextArea.setEditable(false);
 		mainPanel.add(memberDataTextArea);
 
-		// Update member data display (initially empty until member is loaded)
 		updateMemberDataDisplay();
 
 		JPanel updatePanel = new JPanel();
@@ -113,14 +110,14 @@ public class UpdateMember extends JFrame {
 		JLabel updateInstructionLabel = new JLabel("輸入要修改的資料");
 		updateInstructionLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		updateInstructionLabel.setForeground(new Color(0, 0, 0));
-		updateInstructionLabel.setFont(new Font("微軟正黑體", Font.BOLD, 14));
+		updateInstructionLabel.setFont(new Font("serif", Font.BOLD, 14));
 		updateInstructionLabel.setBounds(25, 0, 202, 25);
 		updatePanel.add(updateInstructionLabel);
 
 		JLabel nameLabel = new JLabel("姓名");
 		nameLabel.setBounds(247, 43, 35, 25);
 		nameLabel.setForeground(new Color(255, 245, 228));
-		nameLabel.setFont(new Font("微軟正黑體", Font.BOLD, 14));
+		nameLabel.setFont(new Font("serif", Font.BOLD, 14));
 		mainPanel.add(nameLabel);
 
 		nameField = new JTextField();
@@ -131,7 +128,7 @@ public class UpdateMember extends JFrame {
 		JLabel passwordLabel = new JLabel("密碼");
 		passwordLabel.setBounds(247, 82, 35, 25);
 		passwordLabel.setForeground(new Color(255, 245, 228));
-		passwordLabel.setFont(new Font("微軟正黑體", Font.BOLD, 14));
+		passwordLabel.setFont(new Font("serif", Font.BOLD, 14));
 		mainPanel.add(passwordLabel);
 
 		passwordField = new JTextField();
@@ -142,7 +139,7 @@ public class UpdateMember extends JFrame {
 		JLabel emailLabel = new JLabel("信箱");
 		emailLabel.setBounds(247, 121, 35, 25);
 		emailLabel.setForeground(new Color(255, 245, 228));
-		emailLabel.setFont(new Font("微軟正黑體", Font.BOLD, 14));
+		emailLabel.setFont(new Font("serif", Font.BOLD, 14));
 		mainPanel.add(emailLabel);
 
 		emailField = new JTextField();
@@ -153,7 +150,7 @@ public class UpdateMember extends JFrame {
 		JLabel addressLabel = new JLabel("地址");
 		addressLabel.setBounds(247, 160, 35, 25);
 		addressLabel.setForeground(new Color(255, 245, 228));
-		addressLabel.setFont(new Font("微軟正黑體", Font.BOLD, 14));
+		addressLabel.setFont(new Font("serif", Font.BOLD, 14));
 		mainPanel.add(addressLabel);
 
 		addressField = new JTextField();
@@ -164,7 +161,7 @@ public class UpdateMember extends JFrame {
 		JLabel phoneLabel = new JLabel("電話");
 		phoneLabel.setBounds(247, 199, 35, 25);
 		phoneLabel.setForeground(new Color(255, 245, 228));
-		phoneLabel.setFont(new Font("微軟正黑體", Font.BOLD, 14));
+		phoneLabel.setFont(new Font("serif", Font.BOLD, 14));
 		mainPanel.add(phoneLabel);
 
 		phoneField = new JTextField();
@@ -181,14 +178,14 @@ public class UpdateMember extends JFrame {
 		JLabel deleteInstructionLabel = new JLabel("刪除資料，請輸入帳密");
 		deleteInstructionLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		deleteInstructionLabel.setForeground(new Color(0, 0, 0));
-		deleteInstructionLabel.setFont(new Font("微軟正黑體", Font.BOLD, 14));
+		deleteInstructionLabel.setFont(new Font("serif", Font.BOLD, 14));
 		deleteInstructionLabel.setBounds(6, 0, 211, 25);
 		deletePanel.add(deleteInstructionLabel);
 
 		JLabel deleteUsernameLabel = new JLabel("帳號");
 		deleteUsernameLabel.setBounds(247, 306, 35, 25);
 		deleteUsernameLabel.setForeground(new Color(255, 245, 228));
-		deleteUsernameLabel.setFont(new Font("微軟正黑體", Font.BOLD, 14));
+		deleteUsernameLabel.setFont(new Font("serif", Font.BOLD, 14));
 		mainPanel.add(deleteUsernameLabel);
 
 		deleteUsernameField = new JTextField();
@@ -199,7 +196,7 @@ public class UpdateMember extends JFrame {
 		JLabel deletePasswordLabel = new JLabel("密碼");
 		deletePasswordLabel.setBounds(247, 345, 35, 25);
 		deletePasswordLabel.setForeground(new Color(255, 245, 228));
-		deletePasswordLabel.setFont(new Font("微軟正黑體", Font.BOLD, 14));
+		deletePasswordLabel.setFont(new Font("serif", Font.BOLD, 14));
 		mainPanel.add(deletePasswordLabel);
 
 		deletePasswordField = new JTextField();
@@ -208,6 +205,7 @@ public class UpdateMember extends JFrame {
 		mainPanel.add(deletePasswordField);
 
 		JButton backButton = new JButton("回上一頁");
+		backButton.setFont(new Font("Serif", Font.PLAIN, 13));
 		backButton.setBounds(99, 250, 104, 44);
 		backButton.addMouseListener(new MouseAdapter() {
 			@Override
@@ -218,11 +216,12 @@ public class UpdateMember extends JFrame {
 			}
 		});
 		backButton.setForeground(new Color(0, 0, 0));
-		backButton.setBackground(new Color(15, 84, 145));
+		backButton.setBackground(new Color(250, 240, 230));
 		mainPanel.add(backButton);
 
 		JButton confirmUpdateButton = new JButton("確認修改");
-		confirmUpdateButton.setBounds(370, 236, 85, 25);
+		confirmUpdateButton.setFont(new Font("Serif", Font.PLAIN, 13));
+		confirmUpdateButton.setBounds(370, 226, 85, 35);
 		confirmUpdateButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -263,11 +262,12 @@ public class UpdateMember extends JFrame {
 			}
 		});
 		confirmUpdateButton.setForeground(new Color(0, 0, 0));
-		confirmUpdateButton.setBackground(new Color(15, 84, 145));
+		confirmUpdateButton.setBackground(new Color(250, 240, 230));
 		mainPanel.add(confirmUpdateButton);
 
 		JButton confirmDeleteButton = new JButton("確認刪除");
-		confirmDeleteButton.setBounds(370, 374, 85, 25);
+		confirmDeleteButton.setFont(new Font("Serif", Font.PLAIN, 13));
+		confirmDeleteButton.setBounds(370, 374, 85, 41);
 		confirmDeleteButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -302,10 +302,11 @@ public class UpdateMember extends JFrame {
 			}
 		});
 		confirmDeleteButton.setForeground(new Color(0, 0, 0));
-		confirmDeleteButton.setBackground(new Color(15, 84, 145));
+		confirmDeleteButton.setBackground(new Color(250, 240, 230));
 		mainPanel.add(confirmDeleteButton);
 
 		JButton logoutButton = new JButton("登出");
+		logoutButton.setFont(new Font("Serif", Font.PLAIN, 13));
 		logoutButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -315,7 +316,7 @@ public class UpdateMember extends JFrame {
 			}
 		});
 		logoutButton.setForeground(new Color(0, 0, 0));
-		logoutButton.setBackground(new Color(15, 84, 145));
+		logoutButton.setBackground(new Color(250, 240, 230));
 		logoutButton.setBounds(471, 5, 70, 25);
 		headerPanel.add(logoutButton);
 	}

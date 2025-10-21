@@ -139,7 +139,7 @@ public class MemberDaoImpl implements MemberDao {
 				member.setEmail(rs.getString("email"));
 				member.setPhone(rs.getString("phone"));
 				member.setAddress(rs.getString("address"));
-				member.setAdmin(rs.getBoolean("isAdmin"));
+				//member.setAdmin(rs.getBoolean("isAdmin"));
 			}
 
 		} catch (SQLException e) {

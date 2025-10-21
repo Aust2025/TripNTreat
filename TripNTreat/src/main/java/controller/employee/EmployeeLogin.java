@@ -52,76 +52,73 @@ public class EmployeeLogin extends JFrame {
 	public EmployeeLogin() {
 		esi = new EmployeeServiceImpl();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(600, 200, 753, 439);
+		setBounds(600, 200, 828, 478);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-		// 標題區
 		JPanel panelHeader = new JPanel();
-		panelHeader.setBounds(25, 3, 701, 48);
+		panelHeader.setBounds(25, 3, 776, 48);
 		panelHeader.setLayout(null);
 		panelHeader.setBackground(new Color(64, 224, 208));
 		contentPane.add(panelHeader);
 
-		JLabel lblTitle = new JLabel("歡迎使用後台管理系統");
+		JLabel lblTitle = new JLabel("後台管理系統");
 		lblTitle.setHorizontalAlignment(SwingConstants.CENTER);
 		lblTitle.setForeground(Color.BLACK);
-		lblTitle.setFont(new Font("微軟正黑體", Font.PLAIN, 14));
-		lblTitle.setBounds(202, 6, 300, 35);
+		lblTitle.setFont(new Font("Serif", Font.PLAIN, 16));
+		lblTitle.setBounds(226, 5, 300, 35);
 		panelHeader.add(lblTitle);
 
 		JLabel lblEmployeeInfo = new JLabel("員工資訊：未登入");
 		lblEmployeeInfo.setHorizontalAlignment(SwingConstants.CENTER);
 		lblEmployeeInfo.setForeground(Color.BLACK);
-		lblEmployeeInfo.setFont(new Font("微軟正黑體", Font.PLAIN, 12));
-		lblEmployeeInfo.setBounds(346, 14, 250, 20);
+		lblEmployeeInfo.setFont(new Font("Serif", Font.PLAIN, 14));
+		lblEmployeeInfo.setBounds(520, 6, 250, 35);
 		panelHeader.add(lblEmployeeInfo);
 
-		// 主面板
 		JPanel panelMain = new JPanel();
-		panelMain.setBounds(25, 67, 701, 318);
+		panelMain.setBounds(25, 67, 776, 361);
 		panelMain.setBackground(new Color(64, 224, 208));
 		contentPane.add(panelMain);
 		panelMain.setLayout(null);
 
 		JLabel lblEmployeeNo = new JLabel("員工編號");
-		lblEmployeeNo.setBounds(242, 59, 65, 25);
+		lblEmployeeNo.setBounds(269, 81, 65, 25);
 		lblEmployeeNo.setForeground(Color.BLACK);
-		lblEmployeeNo.setFont(new Font("微軟正黑體", Font.PLAIN, 14));
+		lblEmployeeNo.setFont(new Font("Serif", Font.PLAIN, 15));
 		panelMain.add(lblEmployeeNo);
 
 		txtEmployeeNo = new JTextField();
-		txtEmployeeNo.setBounds(304, 59, 177, 25);
+		txtEmployeeNo.setBounds(331, 81, 177, 25);
 		panelMain.add(txtEmployeeNo);
 		txtEmployeeNo.setColumns(10);
 
 		JLabel lblEmployeePass = new JLabel("員工密碼");
-		lblEmployeePass.setBounds(242, 115, 65, 25);
+		lblEmployeePass.setBounds(269, 137, 65, 25);
 		lblEmployeePass.setForeground(Color.BLACK);
-		lblEmployeePass.setFont(new Font("微軟正黑體", Font.PLAIN, 14));
+		lblEmployeePass.setFont(new Font("Serif", Font.PLAIN, 15));
 		panelMain.add(lblEmployeePass);
 
 		txtEmployeePass = new JPasswordField();
-		txtEmployeePass.setBounds(304, 113, 177, 25);
+		txtEmployeePass.setBounds(331, 135, 177, 25);
 		panelMain.add(txtEmployeePass);
 
-		// 登入按鈕
 		JButton btnLogin = new JButton("登入");
-		btnLogin.setBounds(259, 195, 98, 64);
+		btnLogin.setFont(new Font("Serif", Font.PLAIN, 15));
+		btnLogin.setBounds(286, 217, 98, 64);
 		btnLogin.setForeground(Color.BLACK);
-		btnLogin.setBackground(new Color(15, 84, 145));
+		btnLogin.setBackground(new Color(175, 238, 238));
 		panelMain.add(btnLogin);
 
-		// 返回按鈕
-		JButton btnBack = new JButton("回上一頁");
-		btnBack.setBounds(383, 195, 98, 64);
+		JButton btnBack = new JButton("返回");
+		btnBack.setFont(new Font("Serif", Font.PLAIN, 15));
+		btnBack.setBounds(410, 217, 98, 64);
 		btnBack.setForeground(Color.BLACK);
-		btnBack.setBackground(new Color(15, 84, 145));
+		btnBack.setBackground(new Color(175, 238, 238));
 		panelMain.add(btnBack);
 
-		// 按鈕事件
 		btnLogin.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -136,7 +133,7 @@ public class EmployeeLogin extends JFrame {
 				Employee employee = esi.employeeLogin(empNo, empPass);
 
 				if (employee != null) {
-					// 登入成功
+
 					lblEmployeeInfo.setText("員工編號：" + employee.getEmployeeNo() + "  員工姓名：" + employee.getName());
 					Tool.saveFile(employee, "employee.txt");
 
@@ -145,7 +142,7 @@ public class EmployeeLogin extends JFrame {
 					new Backstage().setVisible(true);
 					dispose();
 				} else {
-					// 登入失敗
+
 					JOptionPane.showMessageDialog(null, "員工帳號或密碼錯誤，請重新輸入", "錯誤", JOptionPane.ERROR_MESSAGE);
 					txtEmployeeNo.setText("");
 					txtEmployeePass.setText("");
@@ -162,7 +159,6 @@ public class EmployeeLogin extends JFrame {
 		});
 	}
 
-	// 備用驗證方法 (若 Service 尚未正確連接資料庫可用)
 	private Employee authenticateEmployee(String employeeNo, String employeePass) {
 		try {
 			List<Employee> employees = esi.findAllEmployee();

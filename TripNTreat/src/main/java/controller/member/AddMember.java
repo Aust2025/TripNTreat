@@ -135,7 +135,7 @@ public class AddMember extends JFrame {
 		panel.add(btnNewButton);
 	}
 
-	private void attemptRegister() { // 取得所有欄位的值
+	private void attemptRegister() {
 		String Name = name.getText().trim();
 		String Username = username.getText().trim();
 		String Password = password.getText().trim();
@@ -143,14 +143,12 @@ public class AddMember extends JFrame {
 		String Phone = phone.getText().trim();
 		String Address = address.getText().trim();
 
-		// 欄位驗證
 		if (Name.isEmpty() || Username.isEmpty() || Password.isEmpty() || Email.isEmpty() || Phone.isEmpty()
 				|| Address.isEmpty()) {
 			JOptionPane.showMessageDialog(this, "所有欄位都必填！", "註冊失敗", JOptionPane.ERROR_MESSAGE);
 			return;
 		}
 
-		// Generate memberNo
 		String memberNo = generateMemberNo();
 
 		Member member = new Member();
@@ -163,14 +161,14 @@ public class AddMember extends JFrame {
 		member.setAddress(Address);
 
 		int result = msi.addMember(member);
-		// 帳號重複 -> 導航到 AddMemberError
+
 		if (result == 1) {
 			new AddMemberError().setVisible(true);
 			JOptionPane.showMessageDialog(this, "帳號重複，請換其他帳號。", "註冊失敗", JOptionPane.WARNING_MESSAGE);
 			dispose();
 
 		}
-		// 註冊成功 -> 導航到 AddMemberSuccess
+
 		else if (result == 0) {
 			new AddMemberSuccess().setVisible(true);
 			JOptionPane.showMessageDialog(this, "恭喜你！會員註冊成功。", "註冊成功", JOptionPane.INFORMATION_MESSAGE);

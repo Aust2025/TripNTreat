@@ -95,7 +95,6 @@ public class Trorder {
 
 	public void setStatus(String string) {
 		// TODO Auto-generated method stub
-
 	}
 
 	public Object getStatus() {

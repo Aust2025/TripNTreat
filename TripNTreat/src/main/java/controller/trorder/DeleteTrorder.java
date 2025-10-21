@@ -62,7 +62,6 @@ public class DeleteTrorder extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-		// 標題面板
 		JPanel headerPanel = new JPanel();
 		headerPanel.setBackground(new Color(250, 119, 146));
 		headerPanel.setBounds(20, 10, 563, 35);
@@ -76,14 +75,12 @@ public class DeleteTrorder extends JFrame {
 		titleLabel.setBounds(200, 0, 160, 35);
 		headerPanel.add(titleLabel);
 
-		// 主面板
 		JPanel mainPanel = new JPanel();
 		mainPanel.setBackground(new Color(250, 119, 146));
 		mainPanel.setBounds(20, 55, 563, 380);
 		contentPane.add(mainPanel);
 		mainPanel.setLayout(null);
 
-		// 歡迎訊息
 		JLabel welcomeLabel = new JLabel("選要刪除的訂單，" + (loggedInMember != null ? loggedInMember.getName() : "使用者"));
 		welcomeLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		welcomeLabel.setForeground(new Color(0, 0, 0));
@@ -91,7 +88,6 @@ public class DeleteTrorder extends JFrame {
 		welcomeLabel.setBounds(17, 6, 540, 25);
 		mainPanel.add(welcomeLabel);
 
-		// 訂單表格
 		String[] columnNames = { "訂單編號", "訂單日期", "總金額", "狀態" };
 		tableModel = new DefaultTableModel(columnNames, 0);
 		orderTable = new JTable(tableModel);
@@ -99,13 +95,11 @@ public class DeleteTrorder extends JFrame {
 		scrollPane.setBounds(35, 45, 488, 250);
 		mainPanel.add(scrollPane);
 
-		// 載入訂單資料
 		loadOrderData(trorderService);
 
-		// 刪除按鈕
-		JButton deleteButton = new JButton("刪除選中訂單");
+		JButton deleteButton = new JButton("刪除指定訂單");
 		deleteButton.setForeground(new Color(0, 0, 0));
-		deleteButton.setBackground(new Color(15, 84, 145));
+		deleteButton.setBackground(new Color(250, 240, 146));
 		deleteButton.setFont(new Font("Serif", Font.BOLD, 14));
 		deleteButton.setBounds(202, 307, 150, 35);
 		mainPanel.add(deleteButton);
@@ -117,21 +111,20 @@ public class DeleteTrorder extends JFrame {
 					JOptionPane.showMessageDialog(DeleteTrorder.this, "請選擇一筆訂單！", "錯誤", JOptionPane.ERROR_MESSAGE);
 					return;
 				}
-				int orderId = Integer.parseInt(tableModel.getValueAt(row, 0).toString()); // 假設第一欄為 ID
+				int orderId = Integer.parseInt(tableModel.getValueAt(row, 0).toString());
 				int confirm = JOptionPane.showConfirmDialog(DeleteTrorder.this, "確認刪除訂單？此操作不可復原。", "刪除確認",
 						JOptionPane.YES_NO_OPTION);
 				if (confirm == JOptionPane.YES_OPTION) {
-					trorderService.deleteTrorder(orderId); // 整合 TrorderDaoImpl.delete 和 TrorderDetailDaoImpl.delete
+					trorderService.deleteTrorder(orderId);
 					JOptionPane.showMessageDialog(DeleteTrorder.this, "刪除成功！", "提示", JOptionPane.INFORMATION_MESSAGE);
-					loadOrderData(trorderService); // 重新載入
+					loadOrderData(trorderService);
 				}
 			}
 		});
 
-		// 返回按鈕
 		JButton backButton = new JButton("返回主頁");
 		backButton.setForeground(new Color(0, 0, 0));
-		backButton.setBackground(new Color(15, 84, 145));
+		backButton.setBackground(new Color(250, 240, 230));
 		backButton.setFont(new Font("Serif", Font.BOLD, 14));
 		backButton.setBounds(415, 307, 120, 35);
 		mainPanel.add(backButton);

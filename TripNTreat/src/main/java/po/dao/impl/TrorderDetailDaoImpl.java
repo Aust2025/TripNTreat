@@ -15,14 +15,13 @@ public class TrorderDetailDaoImpl implements TrorderDetailDao {
 
 	private Connection conn = DbConnection.getDb();
 
+	// Create
 	@Override
 	public void add(TrorderDetail trorderDetail) {
-		String sql = "insert into trorderdetail(trorderdetailno, trorderno, itemno, itemname, quantity, unitprice, amount) VALUES(?,?,?,?,?,?,?,?)";
-
-		try {
-			PreparedStatement ps = conn.prepareStatement(sql);
+		String sql = "INSERT INTO trorderdetail(trorderdetailno, trorderno, itemno, itemname, quantity, unitprice, amount) VALUES(?,?,?,?,?,?,?)";
+		try (PreparedStatement ps = conn.prepareStatement(sql)) {
 			ps.setString(1, trorderDetail.getTrorderdetailNo());
-			ps.setString(2, trorderDetail.getTrorderNo()); // 對應訂單編號
+			ps.setString(2, trorderDetail.getTrorderNo());
 			ps.setString(3, trorderDetail.getItemNo());
 			ps.setString(4, trorderDetail.getItemName());
 			ps.setInt(5, trorderDetail.getQuantity());
@@ -34,24 +33,23 @@ public class TrorderDetailDaoImpl implements TrorderDetailDao {
 		}
 	}
 
+	// Read
 	@Override
 	public List<TrorderDetail> selectAll() {
-		String sql = "SELECT * FROM trorderdetail";
 		List<TrorderDetail> list = new ArrayList<>();
-		try {
-			PreparedStatement ps = conn.prepareStatement(sql);
-			ResultSet rs = ps.executeQuery();
+		String sql = "SELECT * FROM trorderdetail";
+		try (PreparedStatement ps = conn.prepareStatement(sql); ResultSet rs = ps.executeQuery()) {
 			while (rs.next()) {
-				TrorderDetail trorderDetail = new TrorderDetail();
-				trorderDetail.setTrorderdetailId(rs.getInt("trorderdetail_id"));
-				trorderDetail.setTrorderdetailNo(rs.getString("trorderdetailno"));
-				trorderDetail.setTrorderNo(rs.getString("trorderno"));
-				trorderDetail.setItemNo(rs.getString("itemno"));
-				trorderDetail.setItemName(rs.getString("itemname"));
-				trorderDetail.setQuantity(rs.getInt("quantity"));
-				trorderDetail.setUnitPrice(rs.getInt("unitprice"));
-				trorderDetail.setAmount(rs.getInt("amount"));
-				list.add(trorderDetail);
+				TrorderDetail td = new TrorderDetail();
+				td.setTrorderdetailId(rs.getInt("trorderdetail_id"));
+				td.setTrorderdetailNo(rs.getString("trorderdetailno"));
+				td.setTrorderNo(rs.getString("trorderno"));
+				td.setItemNo(rs.getString("itemno"));
+				td.setItemName(rs.getString("itemname"));
+				td.setQuantity(rs.getInt("quantity"));
+				td.setUnitPrice(rs.getInt("unitprice"));
+				td.setAmount(rs.getInt("amount"));
+				list.add(td);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -61,34 +59,61 @@ public class TrorderDetailDaoImpl implements TrorderDetailDao {
 
 	@Override
 	public TrorderDetail selectById(int id) {
+		TrorderDetail td = null;
 		String sql = "SELECT * FROM trorderdetail WHERE trorderdetail_id=?";
-		TrorderDetail trorderDetail = null;
-		try {
-			PreparedStatement ps = conn.prepareStatement(sql);
+		try (PreparedStatement ps = conn.prepareStatement(sql)) {
 			ps.setInt(1, id);
-			ResultSet rs = ps.executeQuery();
-			if (rs.next()) {
-				trorderDetail = new TrorderDetail();
-				trorderDetail.setTrorderdetailId(rs.getInt("trorderdetail_id"));
-				trorderDetail.setTrorderdetailNo(rs.getString("trorderdetailno"));
-				trorderDetail.setTrorderNo(rs.getString("trorderno"));
-				trorderDetail.setItemNo(rs.getString("itemno"));
-				trorderDetail.setItemName(rs.getString("itemname"));
-				trorderDetail.setQuantity(rs.getInt("quantity"));
-				trorderDetail.setUnitPrice(rs.getInt("unitprice"));
-				trorderDetail.setAmount(rs.getInt("amount"));
+			try (ResultSet rs = ps.executeQuery()) {
+				if (rs.next()) {
+					td = new TrorderDetail();
+					td.setTrorderdetailId(rs.getInt("trorderdetail_id"));
+					td.setTrorderdetailNo(rs.getString("trorderdetailno"));
+					td.setTrorderNo(rs.getString("trorderno"));
+					td.setItemNo(rs.getString("itemno"));
+					td.setItemName(rs.getString("itemname"));
+					td.setQuantity(rs.getInt("quantity"));
+					td.setUnitPrice(rs.getInt("unitprice"));
+					td.setAmount(rs.getInt("amount"));
+				}
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		return trorderDetail;
+		return td;
 	}
 
 	@Override
+	public List<TrorderDetail> selectByTrorderNo(String trorderNo) {
+		List<TrorderDetail> list = new ArrayList<>();
+		String sql = "SELECT * FROM trorderdetail WHERE trorderno=?";
+		try (PreparedStatement ps = conn.prepareStatement(sql)) {
+			ps.setString(1, trorderNo);
+			try (ResultSet rs = ps.executeQuery()) {
+				while (rs.next()) {
+					TrorderDetail td = new TrorderDetail();
+					td.setTrorderdetailId(rs.getInt("trorderdetail_id"));
+					td.setTrorderdetailNo(rs.getString("trorderdetailno"));
+					td.setTrorderNo(rs.getString("trorderno"));
+					td.setItemNo(rs.getString("itemno"));
+					td.setItemName(rs.getString("itemname"));
+					td.setQuantity(rs.getInt("quantity"));
+					td.setUnitPrice(rs.getInt("unitprice"));
+					td.setAmount(rs.getInt("amount"));
+					list.add(td);
+				}
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
+
+	
+	// Update
+	@Override
 	public void update(TrorderDetail trorderDetail) {
 		String sql = "UPDATE trorderdetail SET trorderdetailno=?, trorderno=?, itemno=?, itemname=?, quantity=?, unitprice=?, amount=? WHERE trorderdetail_id=?";
-		try {
-			PreparedStatement ps = conn.prepareStatement(sql);
+		try (PreparedStatement ps = conn.prepareStatement(sql)) {
 			ps.setString(1, trorderDetail.getTrorderdetailNo());
 			ps.setString(2, trorderDetail.getTrorderNo());
 			ps.setString(3, trorderDetail.getItemNo());
@@ -103,11 +128,11 @@ public class TrorderDetailDaoImpl implements TrorderDetailDao {
 		}
 	}
 
+	// Delete
 	@Override
 	public void delete(int id) {
 		String sql = "DELETE FROM trorderdetail WHERE trorderdetail_id=?";
-		try {
-			PreparedStatement ps = conn.prepareStatement(sql);
+		try (PreparedStatement ps = conn.prepareStatement(sql)) {
 			ps.setInt(1, id);
 			ps.executeUpdate();
 		} catch (SQLException e) {
@@ -115,30 +140,14 @@ public class TrorderDetailDaoImpl implements TrorderDetailDao {
 		}
 	}
 
-	// 依訂單編號查詢
-	public List<TrorderDetail> selectByTrorderNo(String trorderNo) {
-		String sql = "select * from trorderdetail where trorderno=?";
-		List<TrorderDetail> list = new ArrayList<>();
-		try {
-			PreparedStatement ps = conn.prepareStatement(sql);
+	@Override
+	public void deleteByTrorderNo(String trorderNo) {
+		String sql = "DELETE FROM trorderdetail WHERE trorderno=?";
+		try (PreparedStatement ps = conn.prepareStatement(sql)) {
 			ps.setString(1, trorderNo);
-			ResultSet rs = ps.executeQuery();
-			while (rs.next()) {
-				TrorderDetail trorderDetail = new TrorderDetail();
-				trorderDetail.setTrorderdetailId(rs.getInt("trorderdetail_id"));
-				trorderDetail.setTrorderdetailNo(rs.getString("trorderdetailno"));
-				trorderDetail.setTrorderNo(rs.getString("trorderno"));
-				trorderDetail.setItemNo(rs.getString("itemno"));
-				trorderDetail.setItemName(rs.getString("itemname"));
-				trorderDetail.setQuantity(rs.getInt("quantity"));
-				trorderDetail.setUnitPrice(rs.getInt("unitprice"));
-				trorderDetail.setAmount(rs.getInt("amount"));
-				list.add(trorderDetail);
-			}
+			ps.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		return list;
 	}
-
 }

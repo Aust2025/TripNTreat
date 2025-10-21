@@ -49,7 +49,6 @@ public class AddMemberError extends JFrame {
 		int paddingX = 40;
 		int width = 420 - 2 * paddingX;
 
-		// 註冊失敗/帳號重複
 		JLabel mainMessage = new JLabel("註冊失敗");
 		mainMessage.setFont(new Font("Serif", Font.BOLD, 28));
 		mainMessage.setForeground(new Color(50, 50, 50));
@@ -64,7 +63,6 @@ public class AddMemberError extends JFrame {
 		subMessage.setBounds(0, 158, 420, 35);
 		contentPane.add(subMessage);
 
-		// 輔助說明
 		JLabel subText = new JLabel("該帳號已有其他使用者，請重新註冊");
 		subText.setFont(new Font("Serif", Font.PLAIN, 14));
 		subText.setForeground(new Color(100, 100, 100));
@@ -72,7 +70,6 @@ public class AddMemberError extends JFrame {
 		subText.setBounds(40, 358, width, 20);
 		contentPane.add(subText);
 
-		// 重新註冊按鈕
 		JButton returnButton = new JButton("重新註冊");
 		returnButton.setFont(new Font("Serif", Font.BOLD, 18));
 		returnButton.setForeground(Color.WHITE);
@@ -82,7 +79,6 @@ public class AddMemberError extends JFrame {
 		returnButton.setBounds(40, 390, width, 50);
 		contentPane.add(returnButton);
 
-		// 滑鼠點擊邏輯 -> 返回 AddMember
 		returnButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {

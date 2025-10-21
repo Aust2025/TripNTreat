@@ -13,7 +13,9 @@ public interface TrorderDao {
 
 	Trorder selectById(int id);
 
-	List<Trorder> selectByMemberNo(String memberNo); // 新增
+	List<Trorder> selectByMemberNo(String memberNo); 
+
+	Trorder findTrorderByNo(String trorderNo);
 
 	// update
 	void update(Trorder trorder);

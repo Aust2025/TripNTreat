@@ -149,7 +149,7 @@ public class TrorderDaoImpl implements TrorderDao {
 			ResultSet rs = ps.executeQuery();
 			while (rs.next()) {
 				Trorder trorder = new Trorder();
-				trorder.setTrorderId(rs.getInt("trorder_id")); // 設定主鍵
+				trorder.setTrorderId(rs.getInt("trorder_id")); 
 				trorder.setTrorderNo(rs.getString("trorderno"));
 				trorder.setMemberNo(rs.getString("memberno"));
 				trorder.setEmployeeNo(rs.getString("employeeno"));
@@ -164,6 +164,30 @@ public class TrorderDaoImpl implements TrorderDao {
 			e.printStackTrace();
 		}
 		return list;
+	}
+
+	@Override
+	public Trorder findTrorderByNo(String trorderNo) {
+		String sql = "select * from trorder where trorderno=?";
+		Trorder trorder = null;
+		try (PreparedStatement ps = conn.prepareStatement(sql)) {
+			ps.setString(1, trorderNo);
+			ResultSet rs = ps.executeQuery();
+			if (rs.next()) {
+				trorder = new Trorder();
+				trorder.setTrorderId(rs.getInt("trorder_id"));
+				trorder.setTrorderNo(rs.getString("trorderno"));
+				trorder.setMemberNo(rs.getString("memberno"));
+				trorder.setEmployeeNo(rs.getString("employeeno"));
+				trorder.setOrderDate(rs.getDate("orderdate") != null ? rs.getDate("orderdate").toLocalDate() : null);
+				trorder.setTotalAmount(rs.getInt("totalamount"));
+				trorder.setPaidAmount(rs.getInt("paidamount"));
+				trorder.setChangeAmount(rs.getInt("changeamount"));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return trorder;
 	}
 
 }

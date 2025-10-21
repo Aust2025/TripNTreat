@@ -5,21 +5,22 @@ import java.util.List;
 import po.TrorderDetail;
 
 public interface TrorderDetailService {
-	
-	// create
+
+	// Create
 	void addTrorderDetail(TrorderDetail trorderDetail);
 
-	// read
-	List<TrorderDetail> findAllTrorderDetail();
-	
-	List<TrorderDetail> findAllTrorderByTrorderNo(String trorderNo); // 依訂單查詢
+	// Read
+	List<TrorderDetail> findAllTrorderDetail(); 
 
-	TrorderDetail findTrorderDetailById(int id);
-	
+	TrorderDetail findById(int id); 
 
-	// update
+	List<TrorderDetail> findByTrorderNo(String trorderNo); 
+
+	// Update
 	void updateTrorderDetail(TrorderDetail trorderDetail);
 
-	// delete
+	// Delete
 	void deleteTrorderDetail(int id);
+
+	void deleteByTrorderNo(String trorderNo); 
 }

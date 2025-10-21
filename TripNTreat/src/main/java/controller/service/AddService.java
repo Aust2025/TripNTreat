@@ -63,7 +63,7 @@ public class AddService extends JFrame {
 		JLabel lblNewLabel = new JLabel("新增加購服務項目");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setForeground(new Color(0, 0, 0));
-		lblNewLabel.setFont(new Font("微軟正黑體", Font.BOLD, 14));
+		lblNewLabel.setFont(new Font("Serif", Font.BOLD, 14));
 		lblNewLabel.setBounds(155, 0, 295, 35);
 		panel.add(lblNewLabel);
 
@@ -76,13 +76,13 @@ public class AddService extends JFrame {
 		JLabel lblNewLabel_2 = new JLabel("請填寫下表");
 		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_2.setForeground(new Color(0, 0, 0));
-		lblNewLabel_2.setFont(new Font("微軟正黑體", Font.BOLD, 14));
+		lblNewLabel_2.setFont(new Font("Serif", Font.BOLD, 14));
 		lblNewLabel_2.setBounds(137, 26, 301, 25);
 		panel_1.add(lblNewLabel_2);
 
 		JLabel lblServiceNo = new JLabel("服務編號");
 		lblServiceNo.setForeground(new Color(0, 0, 0));
-		lblServiceNo.setFont(new Font("微軟正黑體", Font.BOLD, 14));
+		lblServiceNo.setFont(new Font("Serif", Font.BOLD, 14));
 		lblServiceNo.setBounds(161, 60, 60, 25);
 		panel_1.add(lblServiceNo);
 
@@ -93,7 +93,7 @@ public class AddService extends JFrame {
 
 		JLabel lblNewLabel_1 = new JLabel("加購名稱");
 		lblNewLabel_1.setForeground(new Color(0, 0, 0));
-		lblNewLabel_1.setFont(new Font("微軟正黑體", Font.BOLD, 14));
+		lblNewLabel_1.setFont(new Font("Serif", Font.BOLD, 14));
 		lblNewLabel_1.setBounds(161, 104, 60, 25);
 		panel_1.add(lblNewLabel_1);
 
@@ -104,7 +104,7 @@ public class AddService extends JFrame {
 
 		JLabel lblNewLabel_1_1 = new JLabel("價格");
 		lblNewLabel_1_1.setForeground(new Color(0, 0, 0));
-		lblNewLabel_1_1.setFont(new Font("微軟正黑體", Font.BOLD, 14));
+		lblNewLabel_1_1.setFont(new Font("Serif", Font.BOLD, 14));
 		lblNewLabel_1_1.setBounds(161, 146, 35, 25);
 		panel_1.add(lblNewLabel_1_1);
 
@@ -114,6 +114,7 @@ public class AddService extends JFrame {
 		panel_1.add(price);
 
 		JButton btnNewButton_1 = new JButton("回上一頁");
+		btnNewButton_1.setFont(new Font("Serif", Font.PLAIN, 13));
 		btnNewButton_1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -128,6 +129,7 @@ public class AddService extends JFrame {
 		panel_1.add(btnNewButton_1);
 
 		JButton btnNewButton = new JButton("確認新增");
+		btnNewButton.setFont(new Font("Serif", Font.PLAIN, 13));
 		btnNewButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {

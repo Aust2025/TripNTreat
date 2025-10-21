@@ -91,11 +91,12 @@ public class Login extends JFrame {
 
 		JLabel infoLabel = new JLabel("請輸入使用者帳號及密碼");
 		infoLabel.setBounds(53, 209, 340, 15);
-		infoLabel.setFont(new Font("微軟正黑體", Font.PLAIN, 12));
+		infoLabel.setFont(new Font("Serif", Font.PLAIN, 12));
 		infoLabel.setForeground(Color.GRAY);
 		contentPane.add(infoLabel);
 
 		JButton btnLogin = new JButton("登入");
+		btnLogin.setFont(new Font("Serif", Font.PLAIN, 13));
 		btnLogin.setBounds(53, 240, 340, 50);
 		btnLogin.addMouseListener(new MouseAdapter() {
 			@Override
@@ -124,7 +125,7 @@ public class Login extends JFrame {
 
 		JLabel signUpLink = new JLabel("立即註冊");
 		signUpLink.setBounds(187, 329, 106, 59);
-		signUpLink.setFont(new Font("微軟正黑體", Font.BOLD, 15));
+		signUpLink.setFont(new Font("Serif", Font.BOLD, 15));
 		signUpLink.setForeground(new Color(255, 124, 8));
 		signUpLink.addMouseListener(new MouseAdapter() {
 			@Override
@@ -143,7 +144,7 @@ public class Login extends JFrame {
 		String password = new String(passwordField.getPassword()).trim();
 		Member member = msi.Login(username, password);
 		if (member != null) {
-			Tool.saveMember(member); // 保存登入會員資訊供 AddTrorder 使用
+			Tool.saveMember(member);
 			if (Tool.isMember(member)) {
 				new LoginSuccess().setVisible(true);
 				dispose();

@@ -12,12 +12,14 @@ public interface TrorderDetailDao {
 	List<TrorderDetail> selectAll();
 
 	TrorderDetail selectById(int id);
-	
-	List<TrorderDetail> selectByTrorderNo(String trorderNo); // 新增
+
+	List<TrorderDetail> selectByTrorderNo(String trorderNo); 
 
 	// update
 	void update(TrorderDetail trorderDetail);
 
 	// delete
 	void delete(int id);
+
+	void deleteByTrorderNo(String trorderNo);
 }

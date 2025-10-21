@@ -43,4 +43,9 @@ public class TrorderServiceImpl implements TrorderService {
 	public List<Trorder> findAllTrorderByMemberId(String memberNo) {
 		return tr.selectByMemberNo(memberNo);
 	}
+
+	public Trorder findTrorderByNo(String trorderNo) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

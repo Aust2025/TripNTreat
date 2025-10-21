@@ -41,14 +41,14 @@ public class Member implements Serializable {
 		this.isAdmin = false;
 	}
 
-	// 登入用
+	
 	public Member(String username, String password) {
 		this.username = username;
 		this.password = password;
 		this.isAdmin = false;
 	}
 
-	// 預設帳號用
+	
 	public Member(String username, String password, boolean isAdmin) {
 		this.username = username;
 		this.password = password;

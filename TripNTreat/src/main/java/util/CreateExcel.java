@@ -14,9 +14,7 @@ import po.TrorderDetail;
 
 public class CreateExcel {
 
-	/**
-	 * Creates a new Excel file with a specified sheet and column titles.
-	 */
+
 	public void createExcel(String excelName, String sheetName, String[] titleName) {
 		try (HSSFWorkbook workbook = new HSSFWorkbook(); FileOutputStream fos = new FileOutputStream(excelName)) {
 			HSSFSheet sheet = workbook.createSheet(sheetName);
@@ -31,23 +29,15 @@ public class CreateExcel {
 		}
 	}
 
-	/**
-	 * Inserts Trorder data into an existing Excel file.
-	 */
+	
 	public void insertValue(String excelName, String sheetName, List<Trorder> trorderList) {
-		String[] cols = { "序號", "訂單號", "會員號", "員編", "訂單日", "總金額", "實付金額", "找零金額" };
 		try (FileInputStream fis = new FileInputStream(excelName);
 				HSSFWorkbook workbook = new HSSFWorkbook(fis);
 				FileOutputStream fos = new FileOutputStream(excelName)) {
+
 			HSSFSheet sheet = workbook.getSheet(sheetName);
-			if (sheet == null) {
-				sheet = workbook.createSheet(sheetName);
-				HSSFRow headerRow = sheet.createRow(0);
-				for (int i = 0; i < cols.length; i++) {
-					headerRow.createCell(i).setCellValue(cols[i]);
-				}
-			}
 			int count = sheet.getPhysicalNumberOfRows();
+
 			for (Trorder tr : trorderList) {
 				HSSFRow row = sheet.createRow(count++);
 				row.createCell(0).setCellValue(tr.getTrorderId());
@@ -59,30 +49,24 @@ public class CreateExcel {
 				row.createCell(6).setCellValue(tr.getPaidAmount());
 				row.createCell(7).setCellValue(tr.getChangeAmount());
 			}
+
 			workbook.write(fos);
 			System.out.println("Trorder data inserted successfully into " + excelName);
+
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
 
-	/**
-	 * Inserts TrorderDetail data into an existing Excel file.
-	 */
+	
 	public void insertExcel(String excelName, String sheetName, List<TrorderDetail> trorderDetailList) {
-		String[] cols = { "明細序號", "明細號", "項目號", "項目名", "數量", "單價", "金額" };
 		try (FileInputStream fis = new FileInputStream(excelName);
 				HSSFWorkbook workbook = new HSSFWorkbook(fis);
 				FileOutputStream fos = new FileOutputStream(excelName)) {
+
 			HSSFSheet sheet = workbook.getSheet(sheetName);
-			if (sheet == null) {
-				sheet = workbook.createSheet(sheetName);
-				HSSFRow headerRow = sheet.createRow(0);
-				for (int i = 0; i < cols.length; i++) {
-					headerRow.createCell(i).setCellValue(cols[i]);
-				}
-			}
 			int count = sheet.getPhysicalNumberOfRows();
+
 			for (TrorderDetail trd : trorderDetailList) {
 				HSSFRow row = sheet.createRow(count++);
 				row.createCell(0).setCellValue(trd.getTrorderdetailId());
@@ -93,8 +77,43 @@ public class CreateExcel {
 				row.createCell(5).setCellValue(trd.getUnitPrice());
 				row.createCell(6).setCellValue(trd.getAmount());
 			}
+
 			workbook.write(fos);
 			System.out.println("TrorderDetail data inserted successfully into " + excelName);
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	//配合OutputTrorder 插入 Trorder + TrorderDetail
+	public void insertValue(String excelName, String sheetName, Object[] rowData, int rowIndex) {
+		try (FileInputStream fis = new FileInputStream(excelName);
+				HSSFWorkbook workbook = new HSSFWorkbook(fis);
+				FileOutputStream fos = new FileOutputStream(excelName)) {
+
+			HSSFSheet sheet = workbook.getSheet(sheetName);
+			if (sheet == null) {
+				sheet = workbook.createSheet(sheetName);
+			}
+
+			HSSFRow row = sheet.createRow(rowIndex);
+			for (int i = 0; i < rowData.length; i++) {
+				if (rowData[i] instanceof String) {
+					row.createCell(i).setCellValue((String) rowData[i]);
+				} else if (rowData[i] instanceof Integer) {
+					row.createCell(i).setCellValue((Integer) rowData[i]);
+				} else if (rowData[i] instanceof Double) {
+					row.createCell(i).setCellValue((Double) rowData[i]);
+				} else if (rowData[i] != null) {
+					row.createCell(i).setCellValue(rowData[i].toString());
+				} else {
+					row.createCell(i).setCellValue("");
+				}
+			}
+
+			workbook.write(fos);
+
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

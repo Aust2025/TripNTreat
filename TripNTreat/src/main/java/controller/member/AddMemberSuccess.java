@@ -47,7 +47,6 @@ public class AddMemberSuccess extends JFrame {
 		int paddingX = 40;
 		int width = 420 - 2 * paddingX;
 
-		// 註冊成功
 		JLabel mainMessage = new JLabel("註冊成功");
 		mainMessage.setFont(new Font("Serif", Font.BOLD, 28));
 		mainMessage.setForeground(new Color(50, 50, 50));
@@ -62,7 +61,6 @@ public class AddMemberSuccess extends JFrame {
 		subMessage.setBounds(10, 194, 420, 35);
 		contentPane.add(subMessage);
 
-		// 輔助說明
 		JLabel subText = new JLabel("立即前往登入頁面，開始你的旅程！");
 		subText.setFont(new Font("Serif", Font.PLAIN, 14));
 		subText.setForeground(new Color(100, 100, 100));
@@ -70,7 +68,6 @@ public class AddMemberSuccess extends JFrame {
 		subText.setBounds(40, 371, width, 20);
 		contentPane.add(subText);
 
-		// 動作按鈕
 		JButton returnButton = new JButton("回登入頁");
 		returnButton.setFont(new Font("Serif", Font.BOLD, 18));
 		returnButton.setForeground(Color.WHITE);
@@ -80,7 +77,6 @@ public class AddMemberSuccess extends JFrame {
 		returnButton.setBounds(40, 403, width, 50);
 		contentPane.add(returnButton);
 
-		// 滑鼠點擊邏輯 -> 返回 Login
 		returnButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {

@@ -18,9 +18,9 @@ public class MemberServiceImpl implements MemberService {
 
 	private MemberDaoImpl mdi = new MemberDaoImpl();
 
-	// 新增會員(Create)
+	// Create
 	public int addMember(Member member) {
-		if (mdi.selectUsername(member.getUsername())) { // 檢查帳號是否重複
+		if (mdi.selectUsername(member.getUsername())) { 
 			return 1; // 帳號重複
 		} else {
 			mdi.insert(member);
@@ -28,26 +28,26 @@ public class MemberServiceImpl implements MemberService {
 		}
 	}
 
-	// 會員登入方法(Read)
+	// Read
 	@Override
 	public Member Login(String username, String password) {
 		return mdi.selectByUsernameAndPassword(username, password);
 
 	}
 
-	// 查詢所有會員資料(Read)
+	// Read
 	@Override
 	public String findAllMember() {
 		return mdi.selectAll();
 	}
 
-	// 更新會員資料(Update)
+	// Update
 	@Override
 	public void updateMember(Member member) {
 		mdi.update(member.getName(), member.getPassword(), member.getId());
 	}
 
-	// 刪除資料
+	// Delete
 	@Override
 	public void deleteMember(int id) {
 		mdi.delete(id);

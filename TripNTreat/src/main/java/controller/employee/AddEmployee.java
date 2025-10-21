@@ -63,7 +63,7 @@ public class AddEmployee extends JFrame {
 		JLabel lblTitle = new JLabel("新增管理員");
 		lblTitle.setHorizontalAlignment(SwingConstants.CENTER);
 		lblTitle.setForeground(new Color(0, 0, 0));
-		lblTitle.setFont(new Font("微軟正黑體", Font.BOLD, 14));
+		lblTitle.setFont(new Font("Serif", Font.BOLD, 16));
 		lblTitle.setBounds(196, 0, 295, 35);
 		panelHeader.add(lblTitle);
 
@@ -76,7 +76,7 @@ public class AddEmployee extends JFrame {
 		JLabel lblEmployeeNo = new JLabel("員編");
 		lblEmployeeNo.setBounds(210, 84, 35, 25);
 		lblEmployeeNo.setForeground(new Color(0, 0, 0));
-		lblEmployeeNo.setFont(new Font("微軟正黑體", Font.BOLD, 14));
+		lblEmployeeNo.setFont(new Font("Serif", Font.BOLD, 14));
 		panelForm.add(lblEmployeeNo);
 
 		txtEmployeeNo = new JTextField();
@@ -87,7 +87,7 @@ public class AddEmployee extends JFrame {
 		JLabel lblPassword = new JLabel("密碼");
 		lblPassword.setBounds(210, 124, 35, 25);
 		lblPassword.setForeground(new Color(0, 0, 0));
-		lblPassword.setFont(new Font("微軟正黑體", Font.BOLD, 14));
+		lblPassword.setFont(new Font("Serif", Font.BOLD, 14));
 		panelForm.add(lblPassword);
 
 		txtPassword = new JTextField();
@@ -99,13 +99,13 @@ public class AddEmployee extends JFrame {
 		lblInstruction.setBounds(192, 10, 301, 25);
 		lblInstruction.setHorizontalAlignment(SwingConstants.CENTER);
 		lblInstruction.setForeground(new Color(0, 0, 0));
-		lblInstruction.setFont(new Font("微軟正黑體", Font.BOLD, 14));
+		lblInstruction.setFont(new Font("Serif", Font.BOLD, 14));
 		panelForm.add(lblInstruction);
 
 		JLabel lblName = new JLabel("姓名");
 		lblName.setBounds(210, 47, 35, 25);
 		lblName.setForeground(new Color(0, 0, 0));
-		lblName.setFont(new Font("微軟正黑體", Font.BOLD, 14));
+		lblName.setFont(new Font("Serif", Font.BOLD, 14));
 		panelForm.add(lblName);
 
 		txtName = new JTextField();
@@ -114,6 +114,7 @@ public class AddEmployee extends JFrame {
 		panelForm.add(txtName);
 
 		JButton btnConfirm = new JButton("確認新增");
+		btnConfirm.setFont(new Font("Serif", Font.PLAIN, 13));
 		btnConfirm.setBounds(421, 172, 85, 25);
 		btnConfirm.addMouseListener(new MouseAdapter() {
 			@Override
@@ -146,6 +147,7 @@ public class AddEmployee extends JFrame {
 		panelForm.add(btnConfirm);
 
 		JButton btnBack = new JButton("回上一頁");
+		btnBack.setFont(new Font("Serif", Font.PLAIN, 13));
 		btnBack.setBounds(187, 172, 85, 25);
 		btnBack.addMouseListener(new MouseAdapter() {
 			@Override

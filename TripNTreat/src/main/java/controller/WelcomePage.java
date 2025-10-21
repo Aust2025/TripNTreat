@@ -47,14 +47,14 @@ public class WelcomePage extends JFrame {
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
-		contentPane.setLayout(null);
 		contentPane.setBackground(new Color(247, 231, 206));
+		contentPane.setLayout(null);
 
 		JLabel lblNewLabel = new JLabel("TripNTreat旅遊行程訂購平台");
-		lblNewLabel.setBounds(216, 53, 351, 29);
+		lblNewLabel.setBounds(238, 50, 244, 29);
 		contentPane.add(lblNewLabel);
 		lblNewLabel.setForeground(new Color(0, 0, 0));
-		lblNewLabel.setFont(new Font("微軟正黑體", Font.PLAIN, 18));
+		lblNewLabel.setFont(new Font("serif", Font.PLAIN, 18));
 		JButton btnNewButton = new JButton("會員登入");
 		btnNewButton.setBounds(386, 163, 194, 88);
 		contentPane.add(btnNewButton);
@@ -66,7 +66,7 @@ public class WelcomePage extends JFrame {
 				dispose();
 			}
 		});
-		btnNewButton.setFont(new Font("微軟正黑體", Font.PLAIN, 14));
+		btnNewButton.setFont(new Font("serif", Font.PLAIN, 14));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
@@ -86,7 +86,7 @@ public class WelcomePage extends JFrame {
 			}
 		});
 		btnNewButton_1.setForeground(new Color(0, 0, 0));
-		btnNewButton_1.setFont(new Font("微軟正黑體", Font.PLAIN, 14));
+		btnNewButton_1.setFont(new Font("serif", Font.PLAIN, 14));
 		btnNewButton_1.setBackground(new Color(64, 224, 208));
 
 	}

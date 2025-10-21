@@ -8,7 +8,7 @@ import javax.swing.event.DocumentListener;
 
 public class InputUtil {
 
-	/** 監聽欄位輸入，若有任一欄位有輸入內容才啟用按鈕 **/
+	
 	public static void enableButtonWhenAnyFieldNotEmpty(JTextField[] fields, JButton button) {
 		DocumentListener listener = new DocumentListener() {
 			@Override
@@ -43,7 +43,7 @@ public class InputUtil {
 		}
 	}
 
-	/** 監聽JTextField輸入數量，大於零才啟動按鈕 **/
+	
 	public static void enableButtonWhenAnyQuantityGreaterThanZero(JTextField[] fields, JButton button) {
 		DocumentListener listener = new DocumentListener() {
 			@Override
@@ -73,7 +73,7 @@ public class InputUtil {
 								break;
 							}
 						} catch (NumberFormatException ex) {
-							// 忽略非數字輸入
+							
 						}
 					}
 				}
@@ -86,7 +86,7 @@ public class InputUtil {
 		}
 	}
 
-	/** 監聽JTextArea是否有內容，有內容才啟動按鈕 **/
+	
 	public static void enableButtonWhenTextAreaNotEmpty(JTextArea textArea, JButton button) {
 		DocumentListener listener = new DocumentListener() {
 			@Override
@@ -112,7 +112,7 @@ public class InputUtil {
 		textArea.getDocument().addDocumentListener(listener);
 	}
 
-	// 驗證輸入是否為正整數
+	
 	public static boolean isPositiveInteger(String input) {
 		if (input == null || input.trim().isEmpty()) {
 			return false;
@@ -125,12 +125,12 @@ public class InputUtil {
 		}
 	}
 
-	// 驗證電子郵件格式（簡單驗證）
+	
 	public static boolean isValidEmail(String email) {
 		return email != null && email.matches("^[\\w-_.+]*[\\w-_.]@([\\w]+[.])+[\\w]+[\\w]$");
 	}
 
-	// 驗證電話格式（簡單10位數字）
+
 	public static boolean isValidPhone(String phone) {
 		return phone != null && phone.matches("\\d{10}");
 	}

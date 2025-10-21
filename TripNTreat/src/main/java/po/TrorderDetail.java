@@ -1,9 +1,9 @@
 package po;
 
 public class TrorderDetail {
-	private int trorderdetailId; // 對應資料庫 trorderdetail_id
-	private String trorderdetailNo; // 對應 trorderdetailno
-	private String trorderNo; // 對應 trorderno (訂單編號)
+	private int trorderdetailId; 
+	private String trorderdetailNo; 
+	private String trorderNo; 
 	private String itemNo;
 	private String itemName;
 	private int quantity;
@@ -91,10 +91,15 @@ public class TrorderDetail {
 		this.amount = amount;
 	}
 
+	public int calculateAmount() {
+		return this.quantity * this.unitPrice;
+	}
+
 	@Override
 	public String toString() {
-		return "Trorderdetail [trorderdetailId=" + trorderdetailId + ", trorderdetailNo=" + trorderdetailNo
+		return "TrorderDetail [trorderdetailId=" + trorderdetailId + ", trorderdetailNo=" + trorderdetailNo
 				+ ", trorderNo=" + trorderNo + ", itemNo=" + itemNo + ", itemName=" + itemName + ", quantity="
 				+ quantity + ", unitPrice=" + unitPrice + ", amount=" + amount + "]";
 	}
+
 }

@@ -33,7 +33,6 @@ public class LoginError extends JFrame {
 		});
 	}
 
-	// 頁面標題
 	public LoginError() {
 		setTitle("登入錯誤");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -45,7 +44,6 @@ public class LoginError extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-		// 登入失敗標題
 		JLabel errorTitle = new JLabel("登入失敗");
 		errorTitle.setBounds(134, 100, 157, 64);
 		contentPane.add(errorTitle);
@@ -53,7 +51,6 @@ public class LoginError extends JFrame {
 
 		this.setLocationRelativeTo(null);
 
-		// 錯誤訊息框
 		JPanel errorPanel = new JPanel();
 		errorPanel.setBackground(new Color(245, 245, 245));
 		errorPanel.setBounds(53, 176, 310, 80);
@@ -61,20 +58,17 @@ public class LoginError extends JFrame {
 		contentPane.add(errorPanel);
 		errorPanel.setLayout(null);
 
-		// 警告圖標
 		JLabel warningIcon = new JLabel("!");
 		warningIcon.setFont(new Font("Serif", Font.BOLD, 24));
 		warningIcon.setForeground(new Color(255, 69, 0)); // 橘紅色
 		warningIcon.setBounds(89, 25, 20, 30);
 		errorPanel.add(warningIcon);
 
-		// 錯誤訊息
 		JLabel errorMessage = new JLabel("無效的帳號/密碼");
 		errorMessage.setFont(new Font("Serif", Font.PLAIN, 12));
 		errorMessage.setBounds(121, 34, 115, 20);
 		errorPanel.add(errorMessage);
 
-		// 註冊按鈕
 		JButton registerButton = new JButton("現在註冊");
 		registerButton.setFont(new Font("Serif", Font.BOLD, 18));
 		registerButton.setForeground(Color.WHITE);
@@ -84,7 +78,6 @@ public class LoginError extends JFrame {
 		registerButton.setBounds(30, 315, 360, 50);
 		contentPane.add(registerButton);
 
-		// 點擊註冊 -> 導航到 AddMember
 		registerButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -94,7 +87,6 @@ public class LoginError extends JFrame {
 			}
 		});
 
-		// --- 使用其他帳號登入 (返回 Login) ---
 		JLabel returnToLoginLink = new JLabel("使用其他帳號登入", SwingConstants.CENTER);
 		returnToLoginLink.setFont(new Font("Serif", Font.BOLD, 14));
 		returnToLoginLink.setBounds(30, 400, 360, 20);
