@@ -19,6 +19,7 @@ import controller.employee.Backstage;
 import controller.trorder.AddTrorder;
 import controller.trorder.CheckTrorder;
 import controller.trorder.DeleteTrorder;
+import controller.trorder.OutputTrorder;
 import po.Member;
 import util.Tool;
 
@@ -78,6 +79,7 @@ public class LoginSuccess extends JFrame {
 		});
 		mainPanel.add(checkOrderButton);
 
+
 		JButton deleteOrderButton = new JButton("刪除訂單");
 		deleteOrderButton.setFont(new Font("Serif", Font.PLAIN, 13));
 		deleteOrderButton.setBounds(204, 143, 280, 40);
@@ -101,6 +103,8 @@ public class LoginSuccess extends JFrame {
 			}
 		});
 		mainPanel.add(updateMemberButton);
+		
+		
 
 		JLabel serviceSelectionLabel = new JLabel("訂購行程服務總覽");
 		serviceSelectionLabel.setBounds(212, 13, 300, 25);

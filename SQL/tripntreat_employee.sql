@@ -1,4 +1,4 @@
--- MySQL dump 10.13  Distrib 8.0.43, for macos15 (arm64)
+-- MySQL dump 10.13  Distrib 8.0.43, for Win64 (x86_64)
 --
 -- Host: localhost    Database: tripntreat
 -- ------------------------------------------------------
@@ -50,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-10-21  0:49:36
+-- Dump completed on 2025-10-21 13:10:16

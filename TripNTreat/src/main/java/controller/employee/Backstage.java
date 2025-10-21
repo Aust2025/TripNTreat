@@ -20,6 +20,7 @@ import javax.swing.border.EmptyBorder;
 
 import controller.service.AddTrip;
 import controller.service.UpdateService;
+import controller.trorder.OutputTrorder;
 import po.Employee;
 import util.Tool;
 
@@ -209,6 +210,18 @@ public class Backstage extends JFrame {
 		});
 		btnOrderConfirm.setBounds(389, 182, 280, 40);
 		panelMain.add(btnOrderConfirm);
+		
+		JButton btnexportOrder = new JButton("匯出訂單");
+		btnexportOrder.setFont(new Font("Serif", Font.PLAIN, 13));
+		btnexportOrder.setBounds(389, 232, 280, 35);
+		btnexportOrder.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				new OutputTrorder().setVisible(true);
+				dispose();
+			}
+		});
+		panelMain.add(btnexportOrder);
 
 		JButton btnReportGenerate = new JButton("建立訂單報表");
 		btnReportGenerate.setFont(new Font("Serif", Font.PLAIN, 13));
@@ -221,7 +234,7 @@ public class Backstage extends JFrame {
 				dispose();
 			}
 		});
-		btnReportGenerate.setBounds(389, 234, 280, 40);
+		btnReportGenerate.setBounds(389, 277, 280, 40);
 		panelMain.add(btnReportGenerate);
 
 		setLocationRelativeTo(null);

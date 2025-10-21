@@ -1,4 +1,4 @@
--- MySQL dump 10.13  Distrib 8.0.43, for macos15 (arm64)
+-- MySQL dump 10.13  Distrib 8.0.43, for Win64 (x86_64)
 --
 -- Host: localhost    Database: tripntreat
 -- ------------------------------------------------------
@@ -32,7 +32,7 @@ CREATE TABLE `trorderdetail` (
   `unitprice` int DEFAULT NULL,
   `amount` int DEFAULT NULL,
   PRIMARY KEY (`trorderdetail_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -41,7 +41,7 @@ CREATE TABLE `trorderdetail` (
 
 LOCK TABLES `trorderdetail` WRITE;
 /*!40000 ALTER TABLE `trorderdetail` DISABLE KEYS */;
-INSERT INTO `trorderdetail` VALUES (1,'Td001',NULL,'I001','日本東京3日遊',1,24000,24000),(2,'Td002',NULL,'I002','日本東京3日遊',1,2000,2000),(3,'Td003',NULL,'I003','美國阿拉斯加10日遊',1,110000,110000);
+INSERT INTO `trorderdetail` VALUES (1,'Td001',NULL,'I001','日本東京3日遊',1,24000,24000),(2,'Td002',NULL,'I002','日本東京3日遊',1,2000,2000),(3,'Td003',NULL,'I003','美國阿拉斯加10日遊',1,110000,110000),(10,'Td004','T036',NULL,'澳洲布里斯本7日遊',1,60000,60000),(11,'Td005','T036',NULL,'托運行李',1,700,700),(12,'Td006','T036',NULL,'托運行李',1,700,700),(13,'Td007','T037',NULL,'美國西部大峽谷7日遊',1,60000,60000),(14,'Td008','T037',NULL,'荷蘭阿姆斯特丹渡假村升級',1,10000,10000),(15,'Td009','T037',NULL,'機場Taxi接駁',1,2000,2000),(16,'Td010','T037',NULL,'機場Taxi接駁',1,2000,2000),(17,'Td011','T038',NULL,'澳洲布里斯本7日遊',1,60000,60000),(18,'Td013','T038',NULL,'托運行李',2,700,1400),(19,'Td013','T039',NULL,'澳洲布里斯本養生會館升級',1,5500,5500),(20,'Td014','T039',NULL,'澳洲布里斯本酒莊餐廳',1,2600,2600);
 /*!40000 ALTER TABLE `trorderdetail` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -54,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-10-21  0:49:36
+-- Dump completed on 2025-10-21 13:10:16

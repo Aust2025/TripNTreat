@@ -54,7 +54,7 @@ public class OutputTrorder extends JFrame {
 		JPanel panelHeader = new JPanel();
 		panelHeader.setBounds(30, 10, 670, 41);
 		panelHeader.setLayout(null);
-		panelHeader.setBackground(new Color(250, 119, 146));
+		panelHeader.setBackground(new Color(64, 224, 208));
 		contentPane.add(panelHeader);
 
 		JLabel lblTitle = new JLabel("匯出訂單明細");
@@ -66,7 +66,7 @@ public class OutputTrorder extends JFrame {
 		JPanel panelContent = new JPanel();
 		panelContent.setBounds(30, 71, 670, 259);
 		panelContent.setLayout(null);
-		panelContent.setBackground(new Color(250, 119, 146));
+		panelContent.setBackground(new Color(64, 224, 208));
 		contentPane.add(panelContent);
 
 		JButton btnExcelExport = new JButton("Excel報表");
